@@ -15,15 +15,16 @@ from typing import Dict, List, Optional
 class Database:
     """SQLite database interface for minmaculate grid data."""
 
-    def __init__(self, db_path: str):
+    def __init__(self, db_path: str, check_same_thread: bool = True):
         """
         Initialize database connection and create schema.
 
         Args:
             db_path: Path to SQLite database file
+            check_same_thread: Whether to check same thread (set False for testing)
         """
         self.db_path = db_path
-        self.conn = sqlite3.connect(db_path)
+        self.conn = sqlite3.connect(db_path, check_same_thread=check_same_thread)
         self.conn.row_factory = sqlite3.Row  # Return rows as dictionaries
         self._create_schema()
 

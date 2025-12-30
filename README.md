@@ -44,37 +44,67 @@ uv pip install -r requirements-dev.txt
 
 ## Usage
 
-### Download Data
+### 1. Download Data
 
 ```bash
 python scripts/download_data.py
 ```
 
-### Run Solvers
+Downloads the Sean Lahman Baseball Database (2025 edition) into the `data/` directory.
+
+### 2. Populate Database
 
 ```bash
-# Run both greedy and exact algorithms
-python scripts/run_solver.py --method both
+# Populate database with all players, pairs, and solutions
+python scripts/populate_database.py
 
-# Run only greedy (fast)
-python scripts/run_solver.py --method greedy
+# Skip the exact solver (faster, only runs greedy)
+python scripts/populate_database.py --skip-exact
 
-# Run exact with custom time limit
-python scripts/run_solver.py --method exact --time-limit 7200
+# Custom database path
+python scripts/populate_database.py --db-path custom.db
 ```
 
-### Start Web Interface
+This script:
+- Loads all 19,947 players from the Lahman database
+- Creates 435 franchise pairs
+- Populates player coverage data (58,163 entries)
+- Runs greedy solver (~0.1 seconds)
+- Runs exact ILP solver (~9 minutes, can be skipped)
+- Saves results to SQLite database
+
+### 3. Compare Solvers
+
+```bash
+# Compare greedy vs exact solver performance
+python scripts/compare_solvers.py
+```
+
+Shows:
+- Solution sizes (greedy: 21 players, exact: 19 players)
+- Runtime comparison
+- Approximation ratio (1.1053)
+- Player overlap analysis
+
+### 4. Start Web Interface
 
 ```bash
 # Start FastAPI server
 uvicorn web.api:app --reload --port 8000
 
 # Access the app at:
-# - Frontend: http://localhost:8000/static/index.html
-# - API docs: http://localhost:8000/docs (automatic Swagger UI!)
+# - Frontend: http://localhost:8000
+# - API docs: http://localhost:8000/docs (automatic Swagger UI)
 ```
 
-### Run Tests
+**Web Interface Features:**
+- Solutions comparison table (greedy vs exact)
+- Interactive player list for each solution
+- 30×30 coverage heatmap showing player counts per franchise pair
+- Player search and lookup
+- Franchise pair lookup (find all players who played for two teams)
+
+### 5. Run Tests
 
 ```bash
 # Run all tests
@@ -82,6 +112,9 @@ pytest
 
 # Run with coverage
 pytest --cov=src --cov-report=html
+
+# Run specific test file
+pytest tests/test_api.py -v
 ```
 
 ## Project Structure
@@ -98,51 +131,74 @@ minmaculate-grid/
 
 ## Results
 
-### Greedy Solver Solution ✅
+### Optimal Solution (Exact ILP Solver) 🏆
+
+**Players needed: 19** ✅ **PROVEN OPTIMAL**
+**Runtime: ~9.3 minutes (557 seconds)**
+**Coverage: 435/435 pairs (100%)**
+
+The exact Integer Linear Programming solver found the **provably optimal minimum solution**:
+
+**Complete Optimal Player List:**
+1. Chase Anderson
+2. Ken Brett
+3. Lew Burdette
+4. Bruce Chen
+5. Dennis Cook
+6. Jose Cruz
+7. Octavio Dotel
+8. Jose Guillen
+9. Billy Hamilton
+10. LaTroy Hawkins
+11. Rich Hill
+12. Edwin Jackson
+13. Mike Morgan
+14. Lance Parrish
+15. Edgar Renteria
+16. Fernando Rodney
+17. Matt Stairs
+18. Anthony Swarzak
+19. Ron Villone
+
+**Memorize these 19 players and you'll be able to answer every possible two-team combination in Immaculate Grid!**
+
+### Greedy Solver Solution
 
 **Players needed: 21**
 **Runtime: 0.10 seconds**
 **Coverage: 435/435 pairs (100%)**
 
-The greedy algorithm found an excellent solution requiring just 21 players to cover all possible franchise pair combinations:
+The greedy algorithm provides a fast approximation requiring 21 players:
 
-**Top 10 Players in Solution:**
+**Top Players in Greedy Solution:**
 1. **Edwin Jackson** - 14 franchises, 91 pairs (21% of all pairs!)
 2. **Rich Hill** - 13 franchises, 78 pairs
 3. **Ron Villone** - 12 franchises, 66 pairs
 4. **Bruce Chen** - 11 franchises, 55 pairs
-5. **Royce Clayton** - 11 franchises, 55 pairs
-6. **Octavio Dotel** - 13 franchises, 78 pairs
+5. **Octavio Dotel** - 13 franchises, 78 pairs
+6. **Royce Clayton** - 11 franchises, 55 pairs
 7. **Terry Mulholland** - 11 franchises, 55 pairs
-8. **LaTroy Hawkins** - 10 franchises, 45 pairs
+8. **LaTroy Hawkins** - 11 franchises, 55 pairs
 9. **Matt Stairs** - 12 franchises, 66 pairs
 10. **Jose Guillen** - 10 franchises, 45 pairs
 
-### Complete Player List
+*(See `answers.md` for complete lists with franchise details)*
 
-1. Edwin Jackson
-2. Rich Hill
-3. Ron Villone
-4. Bruce Chen
-5. Octavio Dotel
-6. Royce Clayton
-7. Terry Mulholland
-8. LaTroy Hawkins
-9. Matt Stairs
-10. Jose Guillen
-11. Dennis Cook
-12. Ruben Sierra
-13. Russ Springer
-14. Paul Bako
-15. Chase Anderson
-16. Dan Schatzeder
-17. Abraham Almonte
-18. Shaun Anderson
-19. Pat Borders
-20. Matt Perisho
-21. Rich Amaral
+### Comparison
 
-Memorize these 21 players and you'll be able to answer every possible two-team combination in Immaculate Grid!
+| Metric | Greedy | Exact (Optimal) |
+|--------|--------|-----------------|
+| **Solution Size** | 21 players | **19 players** 🏆 |
+| **Runtime** | 0.10 seconds | 557.82 seconds (~9.3 min) |
+| **Approximation Ratio** | 1.1053 (11% over optimal) | 1.0000 (proven optimal) |
+| **Coverage** | 435/435 pairs (100%) | 435/435 pairs (100%) |
+
+**Key Insights:**
+- The exact solver found a solution **2 players smaller** than greedy (9.5% improvement)
+- Greedy is **5,578x faster** but slightly suboptimal
+- **10 players appear in both solutions** (core journeymen like Edwin Jackson, Rich Hill, etc.)
+- For memorization purposes, the difference between 19 and 21 players is minimal
+- **Mathematical certainty**: 19 is the absolute minimum - no solution with 18 or fewer players exists
 
 ## Data Credits
 
