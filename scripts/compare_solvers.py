@@ -15,10 +15,10 @@ from pathlib import Path
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.franchise_mapper import load_franchise_mapping
 from src.data_processor import build_player_franchise_pairs
-from src.solver_greedy import greedy_set_cover
+from src.franchise_mapper import load_franchise_mapping
 from src.solver_exact import exact_set_cover
+from src.solver_greedy import greedy_set_cover
 
 
 def format_player_name(player_id, player_info):
@@ -43,11 +43,7 @@ def main():
     mapping = load_franchise_mapping(str(teams_csv))
 
     player_pairs, player_info, all_pairs = build_player_franchise_pairs(
-        str(appearances_csv),
-        str(teams_csv),
-        str(people_csv),
-        mapping,
-        min_games=1
+        str(appearances_csv), str(teams_csv), str(people_csv), mapping, min_games=1
     )
 
     print("\n" + "=" * 80)
@@ -99,12 +95,14 @@ def main():
     improvement_pct = (improvement / len(greedy_selected)) * 100
 
     if improvement > 0:
-        print(f"✅ Exact solver found BETTER solution!")
-        print(f"   Improvement: {improvement} players ({improvement_pct:.1f}% reduction)")
+        print("✅ Exact solver found BETTER solution!")
+        print(
+            f"   Improvement: {improvement} players ({improvement_pct:.1f}% reduction)"
+        )
     elif improvement < 0:
-        print(f"⚠️  Exact solver found worse solution (unexpected!)")
+        print("⚠️  Exact solver found worse solution (unexpected!)")
     else:
-        print(f"✓ Both solvers found same solution size")
+        print("✓ Both solvers found same solution size")
 
     print()
 
@@ -120,7 +118,7 @@ def main():
     if speedup > 1:
         print(f"Speed: Greedy is {speedup:.1f}x faster than Exact")
     else:
-        print(f"Speed: Exact is {1/speedup:.1f}x faster than Greedy")
+        print(f"Speed: Exact is {1 / speedup:.1f}x faster than Greedy")
     print()
 
     # Player Differences
@@ -145,7 +143,9 @@ def main():
             name = format_player_name(player_id, player_info)
             franchises = len(set(f for pair in player_pairs[player_id] for f in pair))
             pairs_count = len(player_pairs[player_id])
-            print(f"  - {name:30s} ({franchises:2d} franchises, {pairs_count:3d} pairs)")
+            print(
+                f"  - {name:30s} ({franchises:2d} franchises, {pairs_count:3d} pairs)"
+            )
         print()
 
     if exact_only:
@@ -154,7 +154,9 @@ def main():
             name = format_player_name(player_id, player_info)
             franchises = len(set(f for pair in player_pairs[player_id] for f in pair))
             pairs_count = len(player_pairs[player_id])
-            print(f"  - {name:30s} ({franchises:2d} franchises, {pairs_count:3d} pairs)")
+            print(
+                f"  - {name:30s} ({franchises:2d} franchises, {pairs_count:3d} pairs)"
+            )
         print()
 
     print("=" * 80)
@@ -162,7 +164,9 @@ def main():
     print("=" * 80)
     print(f"The optimal minimum set size is: {len(exact_selected)} players")
     print(f"Greedy approximation is: {len(greedy_selected)} players")
-    print(f"Approximation ratio: {approximation_ratio:.4f} ({approximation_ratio:.1%} of optimal)")
+    print(
+        f"Approximation ratio: {approximation_ratio:.4f} ({approximation_ratio:.1%} of optimal)"
+    )
     print("=" * 80)
 
 

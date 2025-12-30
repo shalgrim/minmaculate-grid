@@ -4,11 +4,10 @@ Tests for exact ILP solver module.
 Following TDD: Write tests first, then implement src/solver_exact.py
 """
 
-import pytest
-from pathlib import Path
-
 # Add src to path
 import sys
+from pathlib import Path
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.solver_exact import exact_set_cover
@@ -28,8 +27,8 @@ class TestExactSolver:
 
         player_pairs = {
             "player1": {("A", "B"), ("A", "C")},  # 2 pairs
-            "player2": {("B", "C")},              # 1 pair
-            "player3": {("A", "B")},              # 1 pair (redundant)
+            "player2": {("B", "C")},  # 1 pair
+            "player3": {("A", "B")},  # 1 pair (redundant)
         }
 
         all_pairs = {("A", "B"), ("A", "C"), ("B", "C")}
@@ -40,7 +39,9 @@ class TestExactSolver:
             "player3": {"nameFirst": "P3", "nameLast": "Three"},
         }
 
-        selected, stats = exact_set_cover(player_pairs, all_pairs, player_info, verbose=False)
+        selected, stats = exact_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
 
         # Exact should find optimal solution: 2 players
         assert len(selected) == 2
@@ -60,11 +61,20 @@ class TestExactSolver:
             "p3": {("C", "D")},
         }
 
-        all_pairs = {("A", "B"), ("A", "C"), ("A", "D"), ("B", "C"), ("B", "D"), ("C", "D")}
+        all_pairs = {
+            ("A", "B"),
+            ("A", "C"),
+            ("A", "D"),
+            ("B", "C"),
+            ("B", "D"),
+            ("C", "D"),
+        }
 
         player_info = {pid: {"nameFirst": pid, "nameLast": ""} for pid in player_pairs}
 
-        selected, stats = exact_set_cover(player_pairs, all_pairs, player_info, verbose=False)
+        selected, stats = exact_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
 
         # Verify all pairs covered
         covered = set()
@@ -90,7 +100,9 @@ class TestExactSolver:
 
         player_info = {pid: {"nameFirst": pid, "nameLast": ""} for pid in player_pairs}
 
-        selected, stats = exact_set_cover(player_pairs, all_pairs, player_info, verbose=False)
+        selected, stats = exact_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
 
         # Optimal is 2 players
         assert len(selected) == 2
@@ -112,7 +124,9 @@ class TestExactSolver:
 
         player_info = {pid: {"nameFirst": pid, "nameLast": ""} for pid in player_pairs}
 
-        selected, stats = exact_set_cover(player_pairs, all_pairs, player_info, verbose=False)
+        selected, stats = exact_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
 
         # Optimal solution is 1 player
         assert len(selected) == 1
@@ -126,7 +140,9 @@ class TestExactSolver:
         all_pairs = {("A", "B")}
         player_info = {"p1": {"nameFirst": "P1", "nameLast": ""}}
 
-        selected, stats = exact_set_cover(player_pairs, all_pairs, player_info, verbose=False)
+        selected, stats = exact_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
 
         # Check stats structure
         assert isinstance(stats, dict)
@@ -143,8 +159,12 @@ class TestExactSolver:
         all_pairs = {("A", "B"), ("A", "C"), ("B", "C")}
         player_info = {pid: {"nameFirst": pid, "nameLast": ""} for pid in player_pairs}
 
-        result1, stats1 = exact_set_cover(player_pairs, all_pairs, player_info, verbose=False)
-        result2, stats2 = exact_set_cover(player_pairs, all_pairs, player_info, verbose=False)
+        result1, stats1 = exact_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
+        result2, stats2 = exact_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
 
         # Results should be identical (same objective)
         assert len(result1) == len(result2)
@@ -160,7 +180,9 @@ class TestExactSolver:
         all_pairs = {("A", "B"), ("A", "C"), ("B", "C")}
         player_info = {pid: {"nameFirst": pid, "nameLast": ""} for pid in player_pairs}
 
-        selected, stats = exact_set_cover(player_pairs, all_pairs, player_info, verbose=False)
+        selected, stats = exact_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
 
         # Should detect infeasibility
         assert stats["status"] == "Infeasible"
@@ -175,7 +197,9 @@ class TestExactSolver:
         player_info = {"p1": {"nameFirst": "Test", "nameLast": "Player"}}
 
         # Should not crash with verbose=True
-        selected, stats = exact_set_cover(player_pairs, all_pairs, player_info, verbose=True)
+        selected, stats = exact_set_cover(
+            player_pairs, all_pairs, player_info, verbose=True
+        )
 
         assert len(selected) == 1
 
@@ -202,15 +226,28 @@ class TestExactVsGreedy:
                     "p2": {("B", "C"), ("B", "D")},
                     "p3": {("C", "D")},
                 },
-                "all_pairs": {("A", "B"), ("A", "C"), ("A", "D"), ("B", "C"), ("B", "D"), ("C", "D")},
+                "all_pairs": {
+                    ("A", "B"),
+                    ("A", "C"),
+                    ("A", "D"),
+                    ("B", "C"),
+                    ("B", "D"),
+                    ("C", "D"),
+                },
             },
         ]
 
         for tc in test_cases:
-            player_info = {pid: {"nameFirst": pid, "nameLast": ""} for pid in tc["player_pairs"]}
+            player_info = {
+                pid: {"nameFirst": pid, "nameLast": ""} for pid in tc["player_pairs"]
+            }
 
-            greedy_selected, _ = greedy_set_cover(tc["player_pairs"], tc["all_pairs"], player_info, verbose=False)
-            exact_selected, _ = exact_set_cover(tc["player_pairs"], tc["all_pairs"], player_info, verbose=False)
+            greedy_selected, _ = greedy_set_cover(
+                tc["player_pairs"], tc["all_pairs"], player_info, verbose=False
+            )
+            exact_selected, _ = exact_set_cover(
+                tc["player_pairs"], tc["all_pairs"], player_info, verbose=False
+            )
 
             # Exact should be <= greedy (by definition of optimal)
             assert len(exact_selected) <= len(greedy_selected)

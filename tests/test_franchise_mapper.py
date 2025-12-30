@@ -4,19 +4,17 @@ Tests for franchise_mapper module.
 Following TDD: Write tests first, then implement src/franchise_mapper.py
 """
 
-import pytest
-from pathlib import Path
-
 # Add src to path
 import sys
+from pathlib import Path
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.franchise_mapper import (
-    load_franchise_mapping,
     get_current_franchises,
     get_franchise_for_team,
+    load_franchise_mapping,
 )
-
 
 # Test data paths
 DATA_DIR = Path(__file__).parent.parent / "data"
@@ -151,6 +149,7 @@ class TestFranchiseConsistency:
 
         # Get 2024 teams from file
         import pandas as pd
+
         teams_df = pd.read_csv(TEAMS_CSV)
         teams_2024 = teams_df[teams_df["yearID"] == 2024]["teamID"].unique()
 

@@ -10,7 +10,8 @@ Formulation:
     Where: x_i ∈ {0, 1} (binary decision variable for each player)
 """
 
-from typing import Dict, Set, Tuple, List
+from typing import Dict, List, Set, Tuple
+
 import pulp
 
 
@@ -19,7 +20,7 @@ def exact_set_cover(
     all_possible_pairs: Set[Tuple[str, str]],
     player_info: Dict[str, Dict],
     verbose: bool = True,
-    time_limit: int = 300
+    time_limit: int = 300,
 ) -> Tuple[List[str], Dict]:
     """
     Exact ILP algorithm to find optimal player set.
@@ -63,7 +64,7 @@ def exact_set_cover(
 
     if uncoverable_pairs:
         if verbose:
-            print(f"❌ Problem is infeasible!")
+            print("❌ Problem is infeasible!")
             print(f"   {len(uncoverable_pairs)} pairs cannot be covered by any player:")
             for pair in uncoverable_pairs[:5]:  # Show first 5
                 print(f"     {pair}")
@@ -103,10 +104,7 @@ def exact_set_cover(
 
         # At least one player covering this pair must be selected
         # (We already checked that all pairs are coverable)
-        prob += (
-            pulp.lpSum(players_covering_pair) >= 1,
-            f"Cover_{pair[0]}_{pair[1]}"
-        )
+        prob += (pulp.lpSum(players_covering_pair) >= 1, f"Cover_{pair[0]}_{pair[1]}")
 
     if verbose:
         print("Solving ILP...")
@@ -115,10 +113,7 @@ def exact_set_cover(
         print()
 
     # Solve the problem
-    solver = pulp.PULP_CBC_CMD(
-        msg=1 if verbose else 0,
-        timeLimit=time_limit
-    )
+    solver = pulp.PULP_CBC_CMD(msg=1 if verbose else 0, timeLimit=time_limit)
 
     prob.solve(solver)
 
@@ -128,9 +123,7 @@ def exact_set_cover(
     if status == "Optimal" or status == "Feasible":
         # Get selected players
         selected_players = [
-            player_id
-            for player_id, var in player_vars.items()
-            if pulp.value(var) == 1
+            player_id for player_id, var in player_vars.items() if pulp.value(var) == 1
         ]
 
         # Calculate coverage
@@ -154,11 +147,15 @@ def exact_set_cover(
                 name_last = player_info[player_id].get("nameLast", "")
                 player_name = f"{name_first} {name_last}".strip() or player_id
 
-                franchises = len(set(f for pair in player_pairs[player_id] for f in pair))
+                franchises = len(
+                    set(f for pair in player_pairs[player_id] for f in pair)
+                )
                 pairs_count = len(player_pairs[player_id])
 
-                print(f"{i:3d}. {player_name:30s} "
-                      f"({franchises:2d} franchises, {pairs_count:3d} pairs)")
+                print(
+                    f"{i:3d}. {player_name:30s} "
+                    f"({franchises:2d} franchises, {pairs_count:3d} pairs)"
+                )
             print()
 
         stats = {
@@ -197,8 +194,9 @@ if __name__ == "__main__":
     import sys
     import time
     from pathlib import Path
-    from src.franchise_mapper import load_franchise_mapping
+
     from src.data_processor import build_player_franchise_pairs
+    from src.franchise_mapper import load_franchise_mapping
 
     data_dir = Path(__file__).parent.parent / "data"
     appearances_csv = data_dir / "Appearances.csv"
@@ -214,19 +212,17 @@ if __name__ == "__main__":
     mapping = load_franchise_mapping(str(teams_csv))
 
     player_pairs, player_info, all_pairs = build_player_franchise_pairs(
-        str(appearances_csv),
-        str(teams_csv),
-        str(people_csv),
-        mapping,
-        min_games=1
+        str(appearances_csv), str(teams_csv), str(people_csv), mapping, min_games=1
     )
 
-    print(f"\nRunning exact ILP solver on full dataset...")
-    print(f"This may take several minutes...")
+    print("\nRunning exact ILP solver on full dataset...")
+    print("This may take several minutes...")
     print()
 
     start_time = time.time()
-    selected_players, stats = exact_set_cover(player_pairs, all_pairs, player_info, verbose=True)
+    selected_players, stats = exact_set_cover(
+        player_pairs, all_pairs, player_info, verbose=True
+    )
     runtime = time.time() - start_time
 
     print("\n" + "=" * 60)
@@ -235,5 +231,7 @@ if __name__ == "__main__":
     print(f"Status: {stats['status']}")
     print(f"Players in solution: {stats['num_players']}")
     print(f"Runtime: {runtime:.2f} seconds")
-    print(f"Coverage: {stats['pairs_covered']}/{stats['total_pairs']} pairs ({stats['coverage_percentage']:.2f}%)")
+    print(
+        f"Coverage: {stats['pairs_covered']}/{stats['total_pairs']} pairs ({stats['coverage_percentage']:.2f}%)"
+    )
     print("=" * 60)

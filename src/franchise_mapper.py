@@ -5,7 +5,8 @@ Maps teamIDs to franchise IDs, handling historical teams that belong to current 
 For example: Brooklyn Dodgers (BRO) → Los Angeles Dodgers (LAD)
 """
 
-from typing import Dict, Set, Optional
+from typing import Dict, Optional, Set
+
 import pandas as pd
 
 

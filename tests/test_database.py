@@ -4,13 +4,11 @@ Tests for SQLite database module.
 Following TDD: Write tests first, then implement src/database.py
 """
 
-import pytest
-from pathlib import Path
-import tempfile
-import os
-
 # Add src to path
 import sys
+import tempfile
+from pathlib import Path
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.database import Database
@@ -79,7 +77,7 @@ class TestPlayerOperations:
                 player_id="testid",
                 name_first="Test",
                 name_last="Player",
-                debut="2020-01-01"
+                debut="2020-01-01",
             )
 
             players = db.get_all_players()
@@ -164,7 +162,7 @@ class TestSolutionOperations:
                 player_ids=player_ids,
                 num_players=2,
                 runtime=0.1,
-                coverage=100.0
+                coverage=100.0,
             )
 
             assert solution_id is not None
@@ -183,7 +181,7 @@ class TestSolutionOperations:
                 player_ids=["p1"],
                 num_players=1,
                 runtime=5.0,
-                coverage=100.0
+                coverage=100.0,
             )
 
             solution = db.get_solution(solution_id)

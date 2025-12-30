@@ -6,7 +6,6 @@ Usage:
     python scripts/download_data.py
 """
 
-import os
 import sys
 import zipfile
 from pathlib import Path
@@ -17,7 +16,9 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 # Database download URL
 # Note: The exact URL may change; check https://sabr.org/lahman-database/ for the latest
-LAHMAN_URL = "https://github.com/chadwickbureau/baseballdatabank/archive/refs/heads/master.zip"
+LAHMAN_URL = (
+    "https://github.com/chadwickbureau/baseballdatabank/archive/refs/heads/master.zip"
+)
 
 # Alternate direct download (if above doesn't work):
 # LAHMAN_URL = "http://seanlahman.com/files/database/baseballdatabank-master.zip"
@@ -30,7 +31,9 @@ def download_progress(block_count, block_size, total_size):
     """Progress callback for urlretrieve."""
     downloaded = block_count * block_size
     percent = (downloaded / total_size) * 100 if total_size > 0 else 0
-    print(f"\rDownloading: {percent:.1f}% ({downloaded:,}/{total_size:,} bytes)", end="")
+    print(
+        f"\rDownloading: {percent:.1f}% ({downloaded:,}/{total_size:,} bytes)", end=""
+    )
 
 
 def download_lahman_database():

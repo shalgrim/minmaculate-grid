@@ -5,14 +5,14 @@ Implements a greedy approximation algorithm for the minimum set cover problem.
 Repeatedly selects the player covering the most uncovered franchise pairs.
 """
 
-from typing import Dict, Set, Tuple, List
+from typing import Dict, List, Set, Tuple
 
 
 def greedy_set_cover(
     player_pairs: Dict[str, Set[Tuple[str, str]]],
     all_possible_pairs: Set[Tuple[str, str]],
     player_info: Dict[str, Dict],
-    verbose: bool = True
+    verbose: bool = True,
 ) -> Tuple[List[str], Dict]:
     """
     Greedy algorithm to find minimal player set.
@@ -88,7 +88,7 @@ def greedy_set_cover(
         if best_player is None or best_coverage == 0:
             if verbose:
                 print()
-                print(f"⚠️  Warning: Cannot cover all pairs!")
+                print("⚠️  Warning: Cannot cover all pairs!")
                 print(f"   {len(uncovered_pairs)} pairs remain uncovered")
             break
 
@@ -106,16 +106,20 @@ def greedy_set_cover(
             name_last = player_info[best_player].get("nameLast", "")
             player_name = f"{name_first} {name_last}".strip() or best_player
 
-            print(f"Iteration {iteration:3d}: Selected {player_name:30s} "
-                  f"(covers {best_coverage:3d} pairs, "
-                  f"{len(uncovered_pairs):3d} remaining)")
+            print(
+                f"Iteration {iteration:3d}: Selected {player_name:30s} "
+                f"(covers {best_coverage:3d} pairs, "
+                f"{len(uncovered_pairs):3d} remaining)"
+            )
 
     if verbose:
         print()
         print("=" * 60)
-        print(f"✅ Greedy solution complete!")
+        print("✅ Greedy solution complete!")
         print(f"   Players selected: {len(selected_players)}")
-        print(f"   Pairs covered: {len(all_possible_pairs) - len(uncovered_pairs)}/{len(all_possible_pairs)}")
+        print(
+            f"   Pairs covered: {len(all_possible_pairs) - len(uncovered_pairs)}/{len(all_possible_pairs)}"
+        )
         if uncovered_pairs:
             print(f"   ⚠️  Uncovered pairs: {len(uncovered_pairs)}")
         print("=" * 60)
@@ -128,7 +132,7 @@ def analyze_greedy_solution(
     selected_players: List[str],
     player_pairs: Dict[str, Set[Tuple[str, str]]],
     player_info: Dict[str, Dict],
-    all_possible_pairs: Set[Tuple[str, str]]
+    all_possible_pairs: Set[Tuple[str, str]],
 ) -> Dict:
     """
     Analyze greedy solution quality.
@@ -156,12 +160,16 @@ def analyze_greedy_solution(
         name_last = player_info[player_id].get("nameLast", "")
         player_name = f"{name_first} {name_last}".strip()
 
-        contributions.append({
-            "player_id": player_id,
-            "player_name": player_name,
-            "pairs_covered": len(player_pairs[player_id]),
-            "total_franchises": len(set(f for pair in player_pairs[player_id] for f in pair)),
-        })
+        contributions.append(
+            {
+                "player_id": player_id,
+                "player_name": player_name,
+                "pairs_covered": len(player_pairs[player_id]),
+                "total_franchises": len(
+                    set(f for pair in player_pairs[player_id] for f in pair)
+                ),
+            }
+        )
 
     return {
         "num_players": len(selected_players),
@@ -178,8 +186,9 @@ if __name__ == "__main__":
     import sys
     import time
     from pathlib import Path
-    from src.franchise_mapper import load_franchise_mapping
+
     from src.data_processor import build_player_franchise_pairs
+    from src.franchise_mapper import load_franchise_mapping
 
     data_dir = Path(__file__).parent.parent / "data"
     appearances_csv = data_dir / "Appearances.csv"
@@ -195,37 +204,43 @@ if __name__ == "__main__":
     mapping = load_franchise_mapping(str(teams_csv))
 
     player_pairs, player_info, all_pairs = build_player_franchise_pairs(
-        str(appearances_csv),
-        str(teams_csv),
-        str(people_csv),
-        mapping,
-        min_games=1
+        str(appearances_csv), str(teams_csv), str(people_csv), mapping, min_games=1
     )
 
     print("\nRunning greedy solver...")
     start_time = time.time()
-    selected_players, stats = greedy_set_cover(player_pairs, all_pairs, player_info, verbose=True)
+    selected_players, stats = greedy_set_cover(
+        player_pairs, all_pairs, player_info, verbose=True
+    )
     runtime = time.time() - start_time
 
     stats["runtime"] = runtime
 
     print("\nAnalyzing solution...")
-    analysis = analyze_greedy_solution(selected_players, player_pairs, player_info, all_pairs)
+    analysis = analyze_greedy_solution(
+        selected_players, player_pairs, player_info, all_pairs
+    )
 
     print("\n" + "=" * 60)
     print("Final Results")
     print("=" * 60)
     print(f"Players in solution: {analysis['num_players']}")
     print(f"Runtime: {runtime:.2f} seconds")
-    print(f"Coverage: {analysis['covered_pairs']}/{analysis['total_pairs']} pairs ({analysis['coverage_percentage']:.2f}%)")
+    print(
+        f"Coverage: {analysis['covered_pairs']}/{analysis['total_pairs']} pairs ({analysis['coverage_percentage']:.2f}%)"
+    )
 
-    if analysis['uncovered_pairs'] > 0:
+    if analysis["uncovered_pairs"] > 0:
         print(f"⚠️  WARNING: {analysis['uncovered_pairs']} pairs not covered!")
 
     print("\nTop 10 players by franchise coverage:")
-    sorted_contributions = sorted(analysis['contributions'], key=lambda x: x['pairs_covered'], reverse=True)
+    sorted_contributions = sorted(
+        analysis["contributions"], key=lambda x: x["pairs_covered"], reverse=True
+    )
 
     for i, contrib in enumerate(sorted_contributions[:10], 1):
-        print(f"{i:2d}. {contrib['player_name']:30s} "
-              f"({contrib['total_franchises']:2d} franchises, "
-              f"{contrib['pairs_covered']:3d} pairs)")
+        print(
+            f"{i:2d}. {contrib['player_name']:30s} "
+            f"({contrib['total_franchises']:2d} franchises, "
+            f"{contrib['pairs_covered']:3d} pairs)"
+        )

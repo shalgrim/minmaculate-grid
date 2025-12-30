@@ -20,22 +20,25 @@ Find the **minimum set of baseball players** needed to memorize so that you can 
 - [x] Documentation with results
 - [x] Pushed to GitHub: https://github.com/shalgrim/minmaculate-grid
 
-**Key Result**: **21 players cover all 435 franchise pairs!**
+**Key Result**: **19 players cover all 435 franchise pairs!** (Proven optimal via ILP solver)
+
+### ✅ Recently Completed
+
+**Exact ILP Solver & Database Infrastructure**
+- [x] Exact solver implementation using PuLP
+- [x] SQLite database module for persistent storage
+- [x] Solver comparison analysis (greedy vs exact)
+- [x] Approximation ratio analysis
+- [x] Database schema for players, pairs, solutions, and coverage
 
 ### 🚧 In Progress
 
-Nothing currently in progress.
+Web interface development (FastAPI + frontend)
 
 ### 📋 Future Enhancements
 
-**Optimization & Analysis**
-- [ ] Exact solver (ILP with PuLP) - Find provably optimal solution
-- [ ] Compare greedy vs exact solutions
-- [ ] Approximation ratio analysis
-
 **Data & Storage**
-- [ ] SQLite database module for persistent storage
-- [ ] Save solutions to database
+- [ ] Save solutions to database (script in development)
 - [ ] Query interface for pair lookups
 
 **Web Interface**
@@ -79,6 +82,31 @@ Nothing currently in progress.
 21. **Rich Amaral** - 4 franchises, 6 pairs
 
 **Performance**: 0.10 seconds runtime, 100% coverage (435/435 pairs)
+
+## Solver Comparison Results
+
+### Greedy vs Exact ILP
+
+| Metric | Greedy | Exact ILP |
+|--------|--------|-----------|
+| Solution Size | 21 players | **19 players** ✅ |
+| Runtime | 0.10 seconds | 557.82 seconds (~9.3 min) |
+| Coverage | 100% (435/435) | 100% (435/435) |
+| Status | Approximation | **Optimal** |
+
+**Key Findings**:
+- **Optimal solution**: **19 players** (proven optimal by ILP solver)
+- **Improvement over greedy**: 2 players fewer (9.5% reduction)
+- **Approximation ratio**: 1.1053 (greedy is 1.11x the optimal solution)
+- **Speed trade-off**: Greedy is 5,578x faster but 2 players suboptimal
+
+**Player Overlap Analysis**:
+- **Common to both**: 10 players
+  - Edwin Jackson, Rich Hill, Ron Villone, Octavio Dotel, Royce Clayton, LaTroy Hawkins, Matt Stairs, Dennis Cook, Russ Springer
+- **Greedy only** (11 players replaced by exact): Abraham Almonte, Rich Amaral, Chase Anderson, Shaun Anderson, Paul Bako, Bruce Chen, Jose Guillen, Terry Mulholland, Matt Perisho, Dan Schatzeder, Ruben Sierra
+- **Exact only** (9 more efficient players): Elmer Dessens, Todd Jones, Mark Leiter, Mike Marshall, Mike Morgan, Rey Sanchez, Julian Tavarez, Tim Worrell, Gregg Zaun
+
+**Insight**: The exact solver found a more efficient combination by selecting Mike Morgan (12 franchises) and Julian Tavarez (11 franchises) over several mid-tier players. This demonstrates the value of ILP optimization - human intuition (greedy selection) came close but missed the truly optimal combination.
 
 ## Technical Architecture
 

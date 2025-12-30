@@ -9,8 +9,7 @@ Provides persistent storage for:
 """
 
 import sqlite3
-from typing import List, Dict, Optional, Tuple
-from datetime import datetime
+from typing import Dict, List, Optional
 
 
 class Database:
@@ -128,11 +127,7 @@ class Database:
     # Player operations
 
     def insert_player(
-        self,
-        player_id: str,
-        name_first: str,
-        name_last: str,
-        debut: str
+        self, player_id: str, name_first: str, name_last: str, debut: str
     ):
         """Insert a player into the database."""
         cursor = self.conn.cursor()
@@ -141,17 +136,14 @@ class Database:
             INSERT OR REPLACE INTO players (player_id, name_first, name_last, debut)
             VALUES (?, ?, ?, ?)
             """,
-            (player_id, name_first, name_last, debut)
+            (player_id, name_first, name_last, debut),
         )
         self.conn.commit()
 
     def get_player(self, player_id: str) -> Optional[Dict]:
         """Get a player by ID."""
         cursor = self.conn.cursor()
-        cursor.execute(
-            "SELECT * FROM players WHERE player_id = ?",
-            (player_id,)
-        )
+        cursor.execute("SELECT * FROM players WHERE player_id = ?", (player_id,))
         row = cursor.fetchone()
         return dict(row) if row else None
 
@@ -179,14 +171,14 @@ class Database:
             INSERT OR IGNORE INTO franchise_pairs (franchise_1, franchise_2)
             VALUES (?, ?)
             """,
-            (f1, f2)
+            (f1, f2),
         )
         self.conn.commit()
 
         # Get the ID
         cursor.execute(
             "SELECT id FROM franchise_pairs WHERE franchise_1 = ? AND franchise_2 = ?",
-            (f1, f2)
+            (f1, f2),
         )
         return cursor.fetchone()[0]
 
@@ -196,13 +188,15 @@ class Database:
             "SELECT * FROM franchise_pairs ORDER BY franchise_1, franchise_2"
         )
 
-    def get_franchise_pair_id(self, franchise_1: str, franchise_2: str) -> Optional[int]:
+    def get_franchise_pair_id(
+        self, franchise_1: str, franchise_2: str
+    ) -> Optional[int]:
         """Get the ID of a franchise pair."""
         f1, f2 = sorted([franchise_1, franchise_2])
         cursor = self.conn.cursor()
         cursor.execute(
             "SELECT id FROM franchise_pairs WHERE franchise_1 = ? AND franchise_2 = ?",
-            (f1, f2)
+            (f1, f2),
         )
         row = cursor.fetchone()
         return row[0] if row else None
@@ -215,7 +209,7 @@ class Database:
         player_ids: List[str],
         num_players: int,
         runtime: float,
-        coverage: float
+        coverage: float,
     ) -> int:
         """
         Save a solution to the database.
@@ -238,7 +232,7 @@ class Database:
             INSERT INTO solutions (algorithm, num_players, runtime_seconds, coverage_percentage)
             VALUES (?, ?, ?, ?)
             """,
-            (algorithm, num_players, runtime, coverage)
+            (algorithm, num_players, runtime, coverage),
         )
         solution_id = cursor.lastrowid
 
@@ -249,7 +243,7 @@ class Database:
                 INSERT INTO solution_players (solution_id, player_id, rank)
                 VALUES (?, ?, ?)
                 """,
-                (solution_id, player_id, rank)
+                (solution_id, player_id, rank),
             )
 
         self.conn.commit()
@@ -258,10 +252,7 @@ class Database:
     def get_solution(self, solution_id: int) -> Optional[Dict]:
         """Get a solution by ID."""
         cursor = self.conn.cursor()
-        cursor.execute(
-            "SELECT * FROM solutions WHERE id = ?",
-            (solution_id,)
-        )
+        cursor.execute("SELECT * FROM solutions WHERE id = ?", (solution_id,))
         row = cursor.fetchone()
         return dict(row) if row else None
 
@@ -275,7 +266,7 @@ class Database:
             ORDER BY created_at DESC
             LIMIT 1
             """,
-            (algorithm,)
+            (algorithm,),
         )
         row = cursor.fetchone()
         return dict(row) if row else None
@@ -290,7 +281,7 @@ class Database:
             WHERE sp.solution_id = ?
             ORDER BY sp.rank
             """,
-            (solution_id,)
+            (solution_id,),
         )
 
     # Player coverage operations
@@ -303,7 +294,7 @@ class Database:
             INSERT OR IGNORE INTO player_coverage (player_id, pair_id)
             VALUES (?, ?)
             """,
-            (player_id, pair_id)
+            (player_id, pair_id),
         )
         self.conn.commit()
 
@@ -317,7 +308,7 @@ class Database:
             WHERE pc.player_id = ?
             ORDER BY fp.franchise_1, fp.franchise_2
             """,
-            (player_id,)
+            (player_id,),
         )
 
     def get_players_covering_pair(self, pair_id: int) -> List[Dict]:
@@ -330,5 +321,5 @@ class Database:
             WHERE pc.pair_id = ?
             ORDER BY p.name_last, p.name_first
             """,
-            (pair_id,)
+            (pair_id,),
         )

@@ -4,11 +4,10 @@ Tests for greedy solver module.
 Following TDD: Write tests first, then implement src/solver_greedy.py
 """
 
-import pytest
-from pathlib import Path
-
 # Add src to path
 import sys
+from pathlib import Path
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.solver_greedy import greedy_set_cover
@@ -28,8 +27,8 @@ class TestGreedySolver:
 
         player_pairs = {
             "player1": {("A", "B"), ("A", "C")},  # 2 pairs
-            "player2": {("B", "C")},              # 1 pair
-            "player3": {("A", "B")},              # 1 pair (redundant)
+            "player2": {("B", "C")},  # 1 pair
+            "player3": {("A", "B")},  # 1 pair (redundant)
         }
 
         all_pairs = {("A", "B"), ("A", "C"), ("B", "C")}
@@ -40,7 +39,9 @@ class TestGreedySolver:
             "player3": {"nameFirst": "P3", "nameLast": "Three"},
         }
 
-        selected, stats = greedy_set_cover(player_pairs, all_pairs, player_info, verbose=False)
+        selected, stats = greedy_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
 
         # Greedy should select 2 players (optimal)
         assert len(selected) <= 3
@@ -61,11 +62,20 @@ class TestGreedySolver:
             "p3": {("C", "D")},
         }
 
-        all_pairs = {("A", "B"), ("A", "C"), ("A", "D"), ("B", "C"), ("B", "D"), ("C", "D")}
+        all_pairs = {
+            ("A", "B"),
+            ("A", "C"),
+            ("A", "D"),
+            ("B", "C"),
+            ("B", "D"),
+            ("C", "D"),
+        }
 
         player_info = {pid: {"nameFirst": pid, "nameLast": ""} for pid in player_pairs}
 
-        selected, stats = greedy_set_cover(player_pairs, all_pairs, player_info, verbose=False)
+        selected, stats = greedy_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
 
         # Verify all pairs covered
         covered = set()
@@ -81,7 +91,9 @@ class TestGreedySolver:
         all_pairs = {("A", "B")}
         player_info = {"p1": {"nameFirst": "P1", "nameLast": ""}}
 
-        selected, stats = greedy_set_cover(player_pairs, all_pairs, player_info, verbose=False)
+        selected, stats = greedy_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
 
         assert len(selected) >= 1
         assert "p1" in selected
@@ -95,8 +107,12 @@ class TestGreedySolver:
         all_pairs = {("A", "B"), ("A", "C"), ("B", "C")}
         player_info = {pid: {"nameFirst": pid, "nameLast": ""} for pid in player_pairs}
 
-        result1, stats1 = greedy_set_cover(player_pairs, all_pairs, player_info, verbose=False)
-        result2, stats2 = greedy_set_cover(player_pairs, all_pairs, player_info, verbose=False)
+        result1, stats1 = greedy_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
+        result2, stats2 = greedy_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
 
         # Results should be identical
         assert result1 == result2
@@ -106,17 +122,39 @@ class TestGreedySolver:
         """Test first player selected covers most pairs."""
         # Player 1 covers 10 pairs, Player 2 covers 1 pair
         player_pairs = {
-            "super_player": {("A", "B"), ("A", "C"), ("A", "D"), ("A", "E"), ("B", "C"),
-                            ("B", "D"), ("B", "E"), ("C", "D"), ("C", "E"), ("D", "E")},
+            "super_player": {
+                ("A", "B"),
+                ("A", "C"),
+                ("A", "D"),
+                ("A", "E"),
+                ("B", "C"),
+                ("B", "D"),
+                ("B", "E"),
+                ("C", "D"),
+                ("C", "E"),
+                ("D", "E"),
+            },
             "normal_player": {("A", "B")},
         }
 
-        all_pairs = {("A", "B"), ("A", "C"), ("A", "D"), ("A", "E"), ("B", "C"),
-                    ("B", "D"), ("B", "E"), ("C", "D"), ("C", "E"), ("D", "E")}
+        all_pairs = {
+            ("A", "B"),
+            ("A", "C"),
+            ("A", "D"),
+            ("A", "E"),
+            ("B", "C"),
+            ("B", "D"),
+            ("B", "E"),
+            ("C", "D"),
+            ("C", "E"),
+            ("D", "E"),
+        }
 
         player_info = {pid: {"nameFirst": pid, "nameLast": ""} for pid in player_pairs}
 
-        selected, stats = greedy_set_cover(player_pairs, all_pairs, player_info, verbose=False)
+        selected, stats = greedy_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
 
         # First player should be the one with most coverage
         assert selected[0] == "super_player"
@@ -130,7 +168,9 @@ class TestGreedySolver:
         all_pairs = {("A", "B")}
         player_info = {"p1": {"nameFirst": "P1", "nameLast": ""}}
 
-        selected, stats = greedy_set_cover(player_pairs, all_pairs, player_info, verbose=False)
+        selected, stats = greedy_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
 
         # Check stats structure
         assert isinstance(stats, dict)
@@ -150,7 +190,9 @@ class TestGreedySolver:
         all_pairs = {("A", "B"), ("A", "C"), ("B", "C")}
         player_info = {pid: {"nameFirst": pid, "nameLast": ""} for pid in player_pairs}
 
-        selected, stats = greedy_set_cover(player_pairs, all_pairs, player_info, verbose=False)
+        selected, stats = greedy_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
 
         # Should return partial solution
         assert isinstance(selected, list)
@@ -175,7 +217,9 @@ class TestGreedySolver:
         all_pairs = {("A", "B"), ("C", "D")}
         player_info = {pid: {"nameFirst": pid, "nameLast": ""} for pid in player_pairs}
 
-        selected, stats = greedy_set_cover(player_pairs, all_pairs, player_info, verbose=False)
+        selected, stats = greedy_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
 
         # Should select 2 players total
         assert len(selected) == 2
@@ -197,7 +241,9 @@ class TestGreedyPerformance:
         all_pairs = {("A", "B")}
         player_info = {pid: {"nameFirst": pid, "nameLast": ""} for pid in player_pairs}
 
-        selected, stats = greedy_set_cover(player_pairs, all_pairs, player_info, verbose=False)
+        selected, stats = greedy_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
 
         # Should only select p1
         assert selected == ["p1"]
@@ -211,6 +257,8 @@ class TestGreedyPerformance:
         player_info = {"p1": {"nameFirst": "Test", "nameLast": "Player"}}
 
         # Should not crash with verbose=True
-        selected, stats = greedy_set_cover(player_pairs, all_pairs, player_info, verbose=True)
+        selected, stats = greedy_set_cover(
+            player_pairs, all_pairs, player_info, verbose=True
+        )
 
         assert len(selected) == 1

@@ -5,9 +5,11 @@ Processes Lahman database CSV files to build player→franchise-pairs mapping.
 This is the core data processing module for the Minmaculate Grid solver.
 """
 
-from typing import Dict, Set, Tuple
 from itertools import combinations
+from typing import Dict, Set, Tuple
+
 import pandas as pd
+
 from src.franchise_mapper import get_current_franchises
 
 
@@ -16,7 +18,7 @@ def build_player_franchise_pairs(
     teams_csv: str,
     people_csv: str,
     franchise_mapping: Dict[str, str],
-    min_games: int = 1
+    min_games: int = 1,
 ) -> Tuple[Dict[str, Set[Tuple[str, str]]], Dict[str, Dict], Set[Tuple[str, str]]]:
     """
     Build optimization data structures using pandas.
@@ -73,10 +75,7 @@ def build_player_franchise_pairs(
     # 5. Group by playerID, get unique franchises per player
     print("Aggregating franchises per player...")
     player_franchises = (
-        appearances_df
-        .groupby("playerID")["franchID"]
-        .apply(lambda x: set(x))
-        .to_dict()
+        appearances_df.groupby("playerID")["franchID"].apply(lambda x: set(x)).to_dict()
     )
     print(f"Found {len(player_franchises):,} unique players")
 
@@ -132,8 +131,9 @@ def build_player_franchise_pairs(
 
     # Verify count
     expected_pairs = len(current_franchises) * (len(current_franchises) - 1) // 2
-    assert len(all_possible_pairs) == expected_pairs, \
+    assert len(all_possible_pairs) == expected_pairs, (
         f"Expected {expected_pairs} pairs, got {len(all_possible_pairs)}"
+    )
 
     print("✅ Data processing complete!")
     return player_pairs, player_info, all_possible_pairs
@@ -164,8 +164,10 @@ def get_player_name(player_id: str, player_info: Dict[str, Dict]) -> str:
     return f"{first} {last}".strip()
 
 
-def get_coverage_stats(player_pairs: Dict[str, Set[Tuple[str, str]]],
-                      all_possible_pairs: Set[Tuple[str, str]]) -> Dict:
+def get_coverage_stats(
+    player_pairs: Dict[str, Set[Tuple[str, str]]],
+    all_possible_pairs: Set[Tuple[str, str]],
+) -> Dict:
     """
     Calculate coverage statistics.
 
@@ -194,7 +196,9 @@ def get_coverage_stats(player_pairs: Dict[str, Set[Tuple[str, str]]],
         "uncovered_pairs": len(uncovered_pairs),
         "coverage_percentage": (len(covered_pairs) / len(all_possible_pairs)) * 100,
         "total_players": len(player_pairs),
-        "players_with_pairs": sum(1 for pairs in player_pairs.values() if len(pairs) > 0),
+        "players_with_pairs": sum(
+            1 for pairs in player_pairs.values() if len(pairs) > 0
+        ),
     }
 
 
@@ -202,6 +206,7 @@ def get_coverage_stats(player_pairs: Dict[str, Set[Tuple[str, str]]],
 if __name__ == "__main__":
     import sys
     from pathlib import Path
+
     from src.franchise_mapper import load_franchise_mapping
 
     data_dir = Path(__file__).parent.parent / "data"
@@ -220,11 +225,7 @@ if __name__ == "__main__":
     print()
     print("Processing data...")
     player_pairs, player_info, all_pairs = build_player_franchise_pairs(
-        str(appearances_csv),
-        str(teams_csv),
-        str(people_csv),
-        mapping,
-        min_games=1
+        str(appearances_csv), str(teams_csv), str(people_csv), mapping, min_games=1
     )
 
     print()
@@ -241,7 +242,9 @@ if __name__ == "__main__":
     print()
     print("Sample players with most franchise pairs:")
     # Find players with most pairs
-    top_players = sorted(player_pairs.items(), key=lambda x: len(x[1]), reverse=True)[:10]
+    top_players = sorted(player_pairs.items(), key=lambda x: len(x[1]), reverse=True)[
+        :10
+    ]
 
     for player_id, pairs in top_players:
         name = get_player_name(player_id, player_info)
