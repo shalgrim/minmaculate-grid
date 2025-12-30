@@ -146,17 +146,37 @@ The greedy algorithm only cares about **marginal value** (new pairs added), not 
 
 **Fascinating Conclusion**: Edwin Jackson's value isn't just quantity (14 franchises), it's the **diversity** of his franchise combination. He hit franchises that created unique pair coverage with minimal redundancy.
 
-### Expected Similar Questions
+### Todd Zeile Analysis
 
-- **Todd Zeile** - 11 teams, 1989-2004
-- **Octavio Dotel** - Already in the solution! (13 franchises)
+**Todd Zeile's Stats:**
+- 11 franchises: BAL, CHC, COL, FLA, LAD, NYM, NYY, PHI, STL, TEX, WSN
+- 55 total franchise pairs (MORE than Orosco!)
+
+**Result**: Also NOT in the greedy solution ❌
+
+**Overlap Analysis**:
+
+| After Player # | Zeile Pairs Covered | Remaining Unique |
+|----------------|---------------------|------------------|
+| 1. Edwin Jackson | 15/55 (27%) | 40 pairs |
+| 2. Rich Hill | 22/55 (40%) | 33 pairs |
+| 3. Ron Villone | 29/55 (53%) | 26 pairs |
+| 4. Bruce Chen | 37/55 (67%) | 18 pairs |
+| 5. Octavio Dotel | 40/55 (73%) | 15 pairs |
+| 10. First 10 players | 48/55 (87%) | 7 pairs |
+
+**Conclusion**: Despite playing for 11 teams and covering 55 pairs, Zeile's franchise combination has 87% overlap with the first 10 greedy picks. He'd only contribute 7 unique pairs - not competitive.
+
+### Other Players to Check
+
+Use `scripts/check_player.py` to analyze any player:
+
+- **Octavio Dotel** - Already in the solution! (#5, 13 franchises)
 - **Mike Morgan** - 12 teams, 1978-2002
 - **Kenny Lofton** - 11 teams, 1991-2007
+- **Matt Stairs** - Already in the solution! (#9, 12 franchises)
 
-Use the investigation pattern:
-1. Check player's franchise count and pairs
-2. Calculate overlap with greedy solution's early picks
-3. Determine marginal value at each iteration
+**Pattern**: Players who played for many teams often have high overlap with super-journeymen like Edwin Jackson. The greedy algorithm ruthlessly exploits this redundancy.
 
 ---
 
@@ -318,23 +338,37 @@ source .venv/bin/activate && pytest -v
 # Run greedy solver
 source .venv/bin/activate && python -m src.solver_greedy
 
-# Check specific player
-source .venv/bin/activate && python3 << 'EOF'
-from src.franchise_mapper import load_franchise_mapping
-from src.data_processor import build_player_franchise_pairs
+# Check specific player (NEW!)
+source .venv/bin/activate && python scripts/check_player.py "Todd Zeile"
+source .venv/bin/activate && python scripts/check_player.py "Jesse Orosco"
+source .venv/bin/activate && python scripts/check_player.py "Kenny Lofton"
+```
 
-mapping = load_franchise_mapping("data/Teams.csv")
-player_pairs, player_info, all_pairs = build_player_franchise_pairs(
-    "data/Appearances.csv", "data/Teams.csv", "data/People.csv", mapping
-)
+### Player Analysis Utility
 
-# Replace with player name
-search_name = "todd zeile"
-for pid, info in player_info.items():
-    name = f"{info.get('nameFirst', '')} {info.get('nameLast', '')}".strip()
-    if search_name in name.lower():
-        print(f"{name}: {len(player_pairs[pid])} pairs")
-EOF
+The `scripts/check_player.py` utility provides detailed overlap analysis:
+
+```bash
+python scripts/check_player.py "Player Name"
+```
+
+**Output includes:**
+- Player's franchise count and pair coverage
+- Whether they're in the greedy solution
+- Detailed overlap with first 10 greedy picks
+- How many unique pairs they'd add
+- Percentage of their pairs already covered
+
+**Example output for Todd Zeile:**
+```
+Player: Todd Zeile
+Franchises played for: 11
+Franchise pairs covered: 55
+❌ Player NOT in greedy solution
+
+After first 10 greedy players:
+  Pairs already covered: 48/55
+  Unique value if added: 7 pairs
 ```
 
 ---
