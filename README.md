@@ -98,7 +98,51 @@ minmaculate-grid/
 
 ## Results
 
-(Results will be added after running the solvers)
+### Greedy Solver Solution ✅
+
+**Players needed: 21**
+**Runtime: 0.10 seconds**
+**Coverage: 435/435 pairs (100%)**
+
+The greedy algorithm found an excellent solution requiring just 21 players to cover all possible franchise pair combinations:
+
+**Top 10 Players in Solution:**
+1. **Edwin Jackson** - 14 franchises, 91 pairs (21% of all pairs!)
+2. **Rich Hill** - 13 franchises, 78 pairs
+3. **Ron Villone** - 12 franchises, 66 pairs
+4. **Bruce Chen** - 11 franchises, 55 pairs
+5. **Royce Clayton** - 11 franchises, 55 pairs
+6. **Octavio Dotel** - 13 franchises, 78 pairs
+7. **Terry Mulholland** - 11 franchises, 55 pairs
+8. **LaTroy Hawkins** - 10 franchises, 45 pairs
+9. **Matt Stairs** - 12 franchises, 66 pairs
+10. **Jose Guillen** - 10 franchises, 45 pairs
+
+### Complete Player List
+
+1. Edwin Jackson
+2. Rich Hill
+3. Ron Villone
+4. Bruce Chen
+5. Octavio Dotel
+6. Royce Clayton
+7. Terry Mulholland
+8. LaTroy Hawkins
+9. Matt Stairs
+10. Jose Guillen
+11. Dennis Cook
+12. Ruben Sierra
+13. Russ Springer
+14. Paul Bako
+15. Chase Anderson
+16. Dan Schatzeder
+17. Abraham Almonte
+18. Shaun Anderson
+19. Pat Borders
+20. Matt Perisho
+21. Rich Amaral
+
+Memorize these 21 players and you'll be able to answer every possible two-team combination in Immaculate Grid!
 
 ## Data Credits
 
