@@ -62,12 +62,14 @@ def main():
     print("Loading data...")
     mapping = load_franchise_mapping(str(teams_csv))
 
-    player_pairs, player_info, all_pairs = build_player_franchise_pairs(
-        str(appearances_csv), str(teams_csv), str(people_csv), mapping, min_games=1
+    player_pairs, player_info, all_pairs, player_franchises = (
+        build_player_franchise_pairs(
+            str(appearances_csv), str(teams_csv), str(people_csv), mapping, min_games=1
+        )
     )
 
     print()
-    print(f"✓ Data loaded:")
+    print("✓ Data loaded:")
     print(f"  Players: {len(player_info):,}")
     print(f"  Franchise pairs: {len(all_pairs)}")
     print()
@@ -127,6 +129,23 @@ def main():
             print(f"  Processed {i:,}/{len(player_pairs):,} players...")
 
     print(f"✓ Inserted {total_coverage_entries:,} coverage entries")
+    print()
+
+    # Populate player franchises table
+    print("-" * 80)
+    print("POPULATING PLAYER FRANCHISES TABLE")
+    print("-" * 80)
+
+    total_franchise_entries = 0
+    for i, (player_id, franchises) in enumerate(player_franchises.items(), 1):
+        for franchise_id in franchises:
+            db.add_player_franchise(player_id, franchise_id)
+            total_franchise_entries += 1
+
+        if i % 1000 == 0:
+            print(f"  Processed {i:,}/{len(player_franchises):,} players...")
+
+    print(f"✓ Inserted {total_franchise_entries:,} player-franchise entries")
     print()
 
     # Run greedy solver
@@ -219,6 +238,7 @@ def main():
     print(f"Players: {len(player_info):,}")
     print(f"Franchise pairs: {len(all_pairs)}")
     print(f"Coverage entries: {total_coverage_entries:,}")
+    print(f"Player-franchise entries: {total_franchise_entries:,}")
     print(f"Solutions saved: {1 if args.skip_exact else 2}")
     print()
     print("You can now start the web interface:")

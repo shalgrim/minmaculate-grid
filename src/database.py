@@ -104,6 +104,20 @@ class Database:
             ON player_coverage(pair_id)
         """)
 
+        # Player franchises table (which franchises each player played for)
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS player_franchises (
+                player_id TEXT NOT NULL,
+                franchise_id TEXT NOT NULL,
+                PRIMARY KEY (player_id, franchise_id)
+            )
+        """)
+
+        cursor.execute("""
+            CREATE INDEX IF NOT EXISTS idx_player_franchises_franchise
+            ON player_franchises(franchise_id)
+        """)
+
         self.conn.commit()
 
     def execute(self, query: str, params: tuple = ()) -> List[Dict]:
@@ -323,4 +337,44 @@ class Database:
             ORDER BY p.name_last, p.name_first
             """,
             (pair_id,),
+        )
+
+    # Player franchise operations
+
+    def add_player_franchise(self, player_id: str, franchise_id: str):
+        """Record that a player played for a franchise."""
+        cursor = self.conn.cursor()
+        cursor.execute(
+            """
+            INSERT OR IGNORE INTO player_franchises (player_id, franchise_id)
+            VALUES (?, ?)
+            """,
+            (player_id, franchise_id),
+        )
+        self.conn.commit()
+
+    def get_player_franchises(self, player_id: str) -> List[str]:
+        """Get all franchises a player played for."""
+        results = self.execute(
+            """
+            SELECT franchise_id
+            FROM player_franchises
+            WHERE player_id = ?
+            ORDER BY franchise_id
+            """,
+            (player_id,),
+        )
+        return [r["franchise_id"] for r in results]
+
+    def get_players_for_franchise(self, franchise_id: str) -> List[Dict]:
+        """Get all players who played for a specific franchise."""
+        return self.execute(
+            """
+            SELECT p.*
+            FROM player_franchises pf
+            JOIN players p ON pf.player_id = p.player_id
+            WHERE pf.franchise_id = ?
+            ORDER BY p.name_last, p.name_first
+            """,
+            (franchise_id,),
         )

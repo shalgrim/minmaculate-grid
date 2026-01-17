@@ -19,7 +19,12 @@ def build_player_franchise_pairs(
     people_csv: str,
     franchise_mapping: Dict[str, str],
     min_games: int = 1,
-) -> Tuple[Dict[str, Set[Tuple[str, str]]], Dict[str, Dict], Set[Tuple[str, str]]]:
+) -> Tuple[
+    Dict[str, Set[Tuple[str, str]]],
+    Dict[str, Dict],
+    Set[Tuple[str, str]],
+    Dict[str, Set[str]],
+]:
     """
     Build optimization data structures using pandas.
 
@@ -35,10 +40,11 @@ def build_player_franchise_pairs(
         - player_pairs: {playerID: set of (franchID1, franchID2) tuples}
         - player_info: {playerID: {nameFirst, nameLast, birthYear, ...}}
         - all_possible_pairs: set of all 435 franchise pairs
+        - player_franchises: {playerID: set of franchID strings}
 
     Example:
         >>> mapping = load_franchise_mapping("data/Teams.csv")
-        >>> player_pairs, player_info, all_pairs = build_player_franchise_pairs(
+        >>> player_pairs, player_info, all_pairs, player_franchises = build_player_franchise_pairs(
         ...     "data/Appearances.csv",
         ...     "data/Teams.csv",
         ...     "data/People.csv",
@@ -136,7 +142,7 @@ def build_player_franchise_pairs(
     )
 
     print("✅ Data processing complete!")
-    return player_pairs, player_info, all_possible_pairs
+    return player_pairs, player_info, all_possible_pairs, player_franchises
 
 
 def get_player_name(player_id: str, player_info: Dict[str, Dict]) -> str:
@@ -202,6 +208,33 @@ def get_coverage_stats(
     }
 
 
+def filter_players_by_franchise(
+    player_pairs: Dict[str, Set[Tuple[str, str]]],
+    player_franchises: Dict[str, Set[str]],
+    target_franchise: str,
+) -> Dict[str, Set[Tuple[str, str]]]:
+    """
+    Filter player_pairs to only players who played for target franchise.
+
+    Args:
+        player_pairs: Player→pairs mapping {playerID: set of (franchID1, franchID2)}
+        player_franchises: Player→franchises mapping {playerID: set of franchID}
+        target_franchise: Franchise ID to filter by (e.g., "MIN", "NYY")
+
+    Returns:
+        Filtered player_pairs with only players who played for target franchise
+
+    Example:
+        >>> filtered = filter_players_by_franchise(player_pairs, player_franchises, "MIN")
+        >>> # All players in filtered played for MIN (including Washington Senators)
+    """
+    return {
+        player_id: pairs
+        for player_id, pairs in player_pairs.items()
+        if target_franchise in player_franchises.get(player_id, set())
+    }
+
+
 # For debugging/exploration
 if __name__ == "__main__":
     import sys
@@ -224,8 +257,10 @@ if __name__ == "__main__":
 
     print()
     print("Processing data...")
-    player_pairs, player_info, all_pairs = build_player_franchise_pairs(
-        str(appearances_csv), str(teams_csv), str(people_csv), mapping, min_games=1
+    player_pairs, player_info, all_pairs, player_franchises = (
+        build_player_franchise_pairs(
+            str(appearances_csv), str(teams_csv), str(people_csv), mapping, min_games=1
+        )
     )
 
     print()

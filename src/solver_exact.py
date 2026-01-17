@@ -56,28 +56,38 @@ def exact_set_cover(
         print(f"Total players available: {len(player_pairs)}")
         print()
 
-    # Check for infeasibility: are there any pairs that no player covers?
-    uncoverable_pairs = []
+    # Check for uncoverable pairs and filter them out
+    uncoverable_pairs = set()
+    coverable_pairs = set()
     for pair in all_possible_pairs:
-        if not any(pair in pairs for pairs in player_pairs.values()):
-            uncoverable_pairs.append(pair)
+        if any(pair in pairs for pairs in player_pairs.values()):
+            coverable_pairs.add(pair)
+        else:
+            uncoverable_pairs.add(pair)
 
     if uncoverable_pairs:
         if verbose:
-            print("❌ Problem is infeasible!")
-            print(f"   {len(uncoverable_pairs)} pairs cannot be covered by any player:")
-            for pair in uncoverable_pairs[:5]:  # Show first 5
+            print(f"⚠️  {len(uncoverable_pairs)} pairs cannot be covered by any player:")
+            for pair in sorted(uncoverable_pairs)[:5]:  # Show first 5
                 print(f"     {pair}")
             if len(uncoverable_pairs) > 5:
                 print(f"     ... and {len(uncoverable_pairs) - 5} more")
             print()
+            print(f"Optimizing for {len(coverable_pairs)} coverable pairs...")
+            print()
 
+    # If no pairs are coverable, return empty solution
+    if not coverable_pairs:
+        if verbose:
+            print("❌ No pairs can be covered!")
         return [], {
             "status": "Infeasible",
             "objective_value": None,
             "num_players": 0,
             "pairs_covered": 0,
             "total_pairs": len(all_possible_pairs),
+            "coverable_pairs": 0,
+            "uncoverable_pairs": len(uncoverable_pairs),
             "coverage_percentage": 0.0,
         }
 
@@ -93,8 +103,8 @@ def exact_set_cover(
     # Objective function: minimize number of players selected
     prob += pulp.lpSum(player_vars.values()), "TotalPlayers"
 
-    # Constraints: each pair must be covered by at least one selected player
-    for pair in all_possible_pairs:
+    # Constraints: each coverable pair must be covered by at least one selected player
+    for pair in coverable_pairs:
         # Find all players who cover this pair
         players_covering_pair = [
             player_vars[player_id]
@@ -103,13 +113,12 @@ def exact_set_cover(
         ]
 
         # At least one player covering this pair must be selected
-        # (We already checked that all pairs are coverable)
         prob += (pulp.lpSum(players_covering_pair) >= 1, f"Cover_{pair[0]}_{pair[1]}")
 
     if verbose:
         print("Solving ILP...")
         print(f"Variables: {len(player_vars)}")
-        print(f"Constraints: {len(all_possible_pairs)}")
+        print(f"Constraints: {len(coverable_pairs)}")
         print()
 
     # Solve the problem
@@ -136,6 +145,8 @@ def exact_set_cover(
             print(f"✅ Solution found: {status}")
             print(f"   Players selected: {len(selected_players)}")
             print(f"   Pairs covered: {len(covered_pairs)}/{len(all_possible_pairs)}")
+            if uncoverable_pairs:
+                print(f"   Uncoverable pairs: {len(uncoverable_pairs)}")
             print(f"   Objective value: {pulp.value(prob.objective)}")
             print("=" * 60)
             print()
@@ -164,6 +175,8 @@ def exact_set_cover(
             "num_players": len(selected_players),
             "pairs_covered": len(covered_pairs),
             "total_pairs": len(all_possible_pairs),
+            "coverable_pairs": len(coverable_pairs),
+            "uncoverable_pairs": len(uncoverable_pairs),
             "coverage_percentage": (len(covered_pairs) / len(all_possible_pairs)) * 100,
         }
 
@@ -183,6 +196,8 @@ def exact_set_cover(
             "num_players": 0,
             "pairs_covered": 0,
             "total_pairs": len(all_possible_pairs),
+            "coverable_pairs": len(coverable_pairs),
+            "uncoverable_pairs": len(uncoverable_pairs),
             "coverage_percentage": 0.0,
         }
 

@@ -170,9 +170,9 @@ class TestExactSolver:
         assert len(result1) == len(result2)
         assert stats1["objective_value"] == stats2["objective_value"]
 
-    def test_exact_handles_infeasible(self):
-        """Test exact solver when solution is impossible."""
-        # No player covers pair (A, B)
+    def test_exact_handles_partial_coverage(self):
+        """Test exact solver when not all pairs can be covered (partial coverage)."""
+        # No player covers pair (A, B), but (A, C) and (B, C) are coverable
         player_pairs = {
             "p1": {("A", "C")},
             "p2": {("B", "C")},
@@ -184,9 +184,32 @@ class TestExactSolver:
             player_pairs, all_pairs, player_info, verbose=False
         )
 
-        # Should detect infeasibility
+        # Should find optimal solution for coverable pairs
+        assert stats["status"] in ["Optimal", "Feasible"]
+        assert isinstance(selected, list)
+        assert len(selected) == 2  # Need both players to cover (A,C) and (B,C)
+        assert stats["pairs_covered"] == 2
+        assert stats["uncoverable_pairs"] == 1
+        assert stats["coverable_pairs"] == 2
+
+    def test_exact_handles_fully_infeasible(self):
+        """Test exact solver when no pairs can be covered."""
+        # No player covers any pair
+        player_pairs = {
+            "p1": set(),
+            "p2": set(),
+        }
+        all_pairs = {("A", "B"), ("A", "C")}
+        player_info = {pid: {"nameFirst": pid, "nameLast": ""} for pid in player_pairs}
+
+        selected, stats = exact_set_cover(
+            player_pairs, all_pairs, player_info, verbose=False
+        )
+
+        # Should detect full infeasibility
         assert stats["status"] == "Infeasible"
         assert isinstance(selected, list)
+        assert len(selected) == 0
 
     def test_exact_verbose_mode(self):
         """Test exact with verbose=True (should not crash)."""

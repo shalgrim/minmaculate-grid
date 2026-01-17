@@ -246,3 +246,106 @@ class TestPlayerCoverage:
             players = db.get_players_covering_pair(pair_id)
             assert len(players) == 2
             db.close()
+
+
+class TestPlayerFranchises:
+    """Tests for player franchise operations."""
+
+    def test_database_has_player_franchises_table(self):
+        """Test player_franchises table exists."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            db_path = Path(tmpdir) / "test.db"
+            db = Database(str(db_path))
+
+            result = db.execute(
+                "SELECT name FROM sqlite_master WHERE type='table' AND name='player_franchises'"
+            )
+            assert len(result) == 1
+            db.close()
+
+    def test_add_player_franchise(self):
+        """Test adding a player-franchise relationship."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            db_path = Path(tmpdir) / "test.db"
+            db = Database(str(db_path))
+
+            db.insert_player("p1", "Player", "One", "2020-01-01")
+            db.add_player_franchise("p1", "NYY")
+
+            franchises = db.get_player_franchises("p1")
+            assert len(franchises) == 1
+            assert franchises[0] == "NYY"
+            db.close()
+
+    def test_add_multiple_franchises_for_player(self):
+        """Test adding multiple franchises for a player."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            db_path = Path(tmpdir) / "test.db"
+            db = Database(str(db_path))
+
+            db.insert_player("p1", "Player", "One", "2020-01-01")
+            db.add_player_franchise("p1", "NYY")
+            db.add_player_franchise("p1", "BOS")
+            db.add_player_franchise("p1", "LAD")
+
+            franchises = db.get_player_franchises("p1")
+            assert len(franchises) == 3
+            assert "NYY" in franchises
+            assert "BOS" in franchises
+            assert "LAD" in franchises
+            db.close()
+
+    def test_add_duplicate_franchise_ignored(self):
+        """Test that duplicate franchise entries are ignored."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            db_path = Path(tmpdir) / "test.db"
+            db = Database(str(db_path))
+
+            db.insert_player("p1", "Player", "One", "2020-01-01")
+            db.add_player_franchise("p1", "NYY")
+            db.add_player_franchise("p1", "NYY")  # Duplicate
+
+            franchises = db.get_player_franchises("p1")
+            assert len(franchises) == 1
+            db.close()
+
+    def test_get_players_for_franchise(self):
+        """Test getting all players for a franchise."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            db_path = Path(tmpdir) / "test.db"
+            db = Database(str(db_path))
+
+            db.insert_player("p1", "Player", "One", "2020-01-01")
+            db.insert_player("p2", "Player", "Two", "2020-01-01")
+            db.insert_player("p3", "Player", "Three", "2020-01-01")
+
+            db.add_player_franchise("p1", "NYY")
+            db.add_player_franchise("p2", "NYY")
+            db.add_player_franchise("p3", "BOS")
+
+            nyy_players = db.get_players_for_franchise("NYY")
+            assert len(nyy_players) == 2
+            player_ids = [p["player_id"] for p in nyy_players]
+            assert "p1" in player_ids
+            assert "p2" in player_ids
+            db.close()
+
+    def test_get_players_for_franchise_empty(self):
+        """Test getting players for franchise with no players."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            db_path = Path(tmpdir) / "test.db"
+            db = Database(str(db_path))
+
+            players = db.get_players_for_franchise("NYY")
+            assert len(players) == 0
+            db.close()
+
+    def test_get_player_franchises_empty(self):
+        """Test getting franchises for player with no franchises."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            db_path = Path(tmpdir) / "test.db"
+            db = Database(str(db_path))
+
+            franchises = db.get_player_franchises("nonexistent")
+            assert len(franchises) == 0
+            db.close()

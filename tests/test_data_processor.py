@@ -23,26 +23,27 @@ PEOPLE_CSV = DATA_DIR / "People.csv"
 class TestBuildPlayerFranchisePairs:
     """Tests for build_player_franchise_pairs function."""
 
-    def test_build_player_pairs_returns_three_tuples(self):
-        """Test function returns (player_pairs, player_info, all_pairs)."""
+    def test_build_player_pairs_returns_four_tuples(self):
+        """Test function returns (player_pairs, player_info, all_pairs, player_franchises)."""
         mapping = load_franchise_mapping(str(TEAMS_CSV))
         result = build_player_franchise_pairs(
             str(APPEARANCES_CSV), str(TEAMS_CSV), str(PEOPLE_CSV), mapping, min_games=1
         )
 
-        # Should return tuple of 3 elements
+        # Should return tuple of 4 elements
         assert isinstance(result, tuple)
-        assert len(result) == 3
+        assert len(result) == 4
 
-        player_pairs, player_info, all_pairs = result
+        player_pairs, player_info, all_pairs, player_franchises = result
         assert isinstance(player_pairs, dict)
         assert isinstance(player_info, dict)
         assert isinstance(all_pairs, set)
+        assert isinstance(player_franchises, dict)
 
     def test_all_possible_pairs_count_is_435(self):
         """Test C(30,2) = 435 franchise pairs."""
         mapping = load_franchise_mapping(str(TEAMS_CSV))
-        _, _, all_pairs = build_player_franchise_pairs(
+        _, _, all_pairs, _ = build_player_franchise_pairs(
             str(APPEARANCES_CSV), str(TEAMS_CSV), str(PEOPLE_CSV), mapping
         )
 
@@ -52,7 +53,7 @@ class TestBuildPlayerFranchisePairs:
     def test_player_pairs_are_tuples_not_lists(self):
         """Test pairs are immutable tuples."""
         mapping = load_franchise_mapping(str(TEAMS_CSV))
-        player_pairs, _, _ = build_player_franchise_pairs(
+        player_pairs, _, _, _ = build_player_franchise_pairs(
             str(APPEARANCES_CSV), str(TEAMS_CSV), str(PEOPLE_CSV), mapping, min_games=1
         )
 
@@ -68,7 +69,7 @@ class TestBuildPlayerFranchisePairs:
     def test_player_info_has_required_fields(self):
         """Test player_info has name and other biographical data."""
         mapping = load_franchise_mapping(str(TEAMS_CSV))
-        _, player_info, _ = build_player_franchise_pairs(
+        _, player_info, _, _ = build_player_franchise_pairs(
             str(APPEARANCES_CSV), str(TEAMS_CSV), str(PEOPLE_CSV), mapping
         )
 
@@ -87,12 +88,12 @@ class TestBuildPlayerFranchisePairs:
         mapping = load_franchise_mapping(str(TEAMS_CSV))
 
         # Get results with min_games=1 (all appearances)
-        player_pairs_1, _, _ = build_player_franchise_pairs(
+        player_pairs_1, _, _, _ = build_player_franchise_pairs(
             str(APPEARANCES_CSV), str(TEAMS_CSV), str(PEOPLE_CSV), mapping, min_games=1
         )
 
         # Get results with min_games=50 (substantial appearances only)
-        player_pairs_50, _, _ = build_player_franchise_pairs(
+        player_pairs_50, _, _, _ = build_player_franchise_pairs(
             str(APPEARANCES_CSV), str(TEAMS_CSV), str(PEOPLE_CSV), mapping, min_games=50
         )
 
@@ -102,7 +103,7 @@ class TestBuildPlayerFranchisePairs:
     def test_all_pairs_are_sorted(self):
         """Test all franchise pairs are sorted tuples."""
         mapping = load_franchise_mapping(str(TEAMS_CSV))
-        _, _, all_pairs = build_player_franchise_pairs(
+        _, _, all_pairs, _ = build_player_franchise_pairs(
             str(APPEARANCES_CSV), str(TEAMS_CSV), str(PEOPLE_CSV), mapping
         )
 
@@ -119,7 +120,7 @@ class TestPlayerPairLogic:
     def test_player_with_one_franchise_has_zero_pairs(self):
         """Test player with single franchise contributes no pairs."""
         mapping = load_franchise_mapping(str(TEAMS_CSV))
-        player_pairs, _, _ = build_player_franchise_pairs(
+        player_pairs, _, _, _ = build_player_franchise_pairs(
             str(APPEARANCES_CSV), str(TEAMS_CSV), str(PEOPLE_CSV), mapping, min_games=1
         )
 
@@ -134,7 +135,7 @@ class TestPlayerPairLogic:
     def test_player_with_two_franchises_has_one_pair(self):
         """Test player with 2 franchises contributes C(2,2) = 1 pair."""
         mapping = load_franchise_mapping(str(TEAMS_CSV))
-        player_pairs, _, _ = build_player_franchise_pairs(
+        player_pairs, _, _, _ = build_player_franchise_pairs(
             str(APPEARANCES_CSV), str(TEAMS_CSV), str(PEOPLE_CSV), mapping, min_games=1
         )
 
@@ -149,7 +150,7 @@ class TestPlayerPairLogic:
     def test_player_with_three_franchises_has_three_pairs(self):
         """Test player with 3 franchises contributes C(3,2) = 3 pairs."""
         mapping = load_franchise_mapping(str(TEAMS_CSV))
-        player_pairs, _, _ = build_player_franchise_pairs(
+        player_pairs, _, _, _ = build_player_franchise_pairs(
             str(APPEARANCES_CSV), str(TEAMS_CSV), str(PEOPLE_CSV), mapping, min_games=1
         )
 
@@ -181,7 +182,7 @@ class TestDataIntegrity:
     def test_all_player_ids_exist_in_player_info(self):
         """Test all playerIDs in player_pairs exist in player_info."""
         mapping = load_franchise_mapping(str(TEAMS_CSV))
-        player_pairs, player_info, _ = build_player_franchise_pairs(
+        player_pairs, player_info, _, _ = build_player_franchise_pairs(
             str(APPEARANCES_CSV), str(TEAMS_CSV), str(PEOPLE_CSV), mapping
         )
 
@@ -196,7 +197,7 @@ class TestDataIntegrity:
         mapping = load_franchise_mapping(str(TEAMS_CSV))
         current_franchises = get_current_franchises(str(TEAMS_CSV))
 
-        player_pairs, _, all_pairs = build_player_franchise_pairs(
+        player_pairs, _, all_pairs, _ = build_player_franchise_pairs(
             str(APPEARANCES_CSV), str(TEAMS_CSV), str(PEOPLE_CSV), mapping
         )
 
@@ -214,7 +215,7 @@ class TestDataIntegrity:
     def test_no_duplicate_pairs_in_all_pairs(self):
         """Test all_possible_pairs has no duplicates."""
         mapping = load_franchise_mapping(str(TEAMS_CSV))
-        _, _, all_pairs = build_player_franchise_pairs(
+        _, _, all_pairs, _ = build_player_franchise_pairs(
             str(APPEARANCES_CSV), str(TEAMS_CSV), str(PEOPLE_CSV), mapping
         )
 
@@ -225,7 +226,7 @@ class TestDataIntegrity:
     def test_player_pairs_subset_of_all_pairs(self):
         """Test each player's pairs are subset of all_possible_pairs."""
         mapping = load_franchise_mapping(str(TEAMS_CSV))
-        player_pairs, _, all_pairs = build_player_franchise_pairs(
+        player_pairs, _, all_pairs, _ = build_player_franchise_pairs(
             str(APPEARANCES_CSV), str(TEAMS_CSV), str(PEOPLE_CSV), mapping
         )
 
