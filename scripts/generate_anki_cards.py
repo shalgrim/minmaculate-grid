@@ -23,7 +23,9 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 from database import Database
 
 
-def parse_player_table(content: str, start_marker: str, end_marker: str) -> Dict[str, List[str]]:
+def parse_player_table(
+    content: str, start_marker: str, end_marker: str
+) -> Dict[str, List[str]]:
     """
     Parse a markdown table to extract player names and franchises.
 
@@ -57,7 +59,7 @@ def parse_player_table(content: str, start_marker: str, end_marker: str) -> Dict
         # Pattern 2 (without bold): | 1 | Luis Ayala | 21 | ATL, BAL, ... |
         match = re.match(
             r"\|\s*\d+\s*\|\s*\*?\*?([^|*]+?)\*?\*?\s*\|\s*\d+\s*\|\s*([^|]+)\s*\|",
-            line
+            line,
         )
         if match:
             player_name = match.group(1).strip()
@@ -71,39 +73,27 @@ def parse_player_table(content: str, start_marker: str, end_marker: str) -> Dict
 def parse_optimal_players(answers_path: Path) -> Dict[str, List[str]]:
     """Parse the 19 optimal players from answers.md."""
     content = answers_path.read_text()
-    return parse_player_table(
-        content,
-        "## Optimal Solution: 19 Players",
-        "---"
-    )
+    return parse_player_table(content, "## Optimal Solution: 19 Players", "---")
 
 
 def parse_twins_players(min_solution_path: Path) -> Dict[str, List[str]]:
     """Parse the 34 Twins-constrained players from min_solution.md."""
     content = min_solution_path.read_text()
     return parse_player_table(
-        content,
-        "## Solution Players (EXACT)",
-        "## Uncoverable Pairs"
+        content, "## Solution Players (EXACT)", "## Uncoverable Pairs"
     )
 
 
-def format_franchises_alphabetical(franchises: List[str]) -> str:
-    """Format franchises in alphabetical order."""
+def format_franchises(franchises: List[str]) -> str:
+    """Format franchises with MIN first (if present), then others alphabetically."""
+    if "MIN" in franchises:
+        other = sorted(f for f in franchises if f != "MIN")
+        return "MIN, " + ", ".join(other)
     return ", ".join(sorted(franchises))
 
 
-def format_franchises_twins_first(franchises: List[str]) -> str:
-    """Format franchises with MIN first, then others alphabetically."""
-    other = sorted(f for f in franchises if f != "MIN")
-    return "MIN, " + ", ".join(other)
-
-
 def get_players_covering_pair(
-    db: Database,
-    franchise_1: str,
-    franchise_2: str,
-    solution_player_ids: Set[str]
+    db: Database, franchise_1: str, franchise_2: str, solution_player_ids: Set[str]
 ) -> List[str]:
     """
     Get players from a solution that cover a specific franchise pair.
@@ -156,60 +146,46 @@ def get_player_id_mapping(db: Database, player_names: List[str]) -> Dict[str, st
     return mapping
 
 
-def generate_optimal_player_cards(players: Dict[str, List[str]]) -> str:
+def generate_player_cards(
+    optimal_players: Dict[str, List[str]], twins_players: Dict[str, List[str]]
+) -> str:
     """
-    Generate TSV content for optimal player cards.
+    Generate TSV content for combined player cards.
+
+    Takes the union of optimal and Twins players. If a player played for MIN,
+    MIN is listed first in their franchises.
 
     Args:
-        players: Dict mapping player name to list of franchises
+        optimal_players: Dict mapping player name to list of franchises (optimal solution)
+        twins_players: Dict mapping player name to list of franchises (Twins solution)
 
     Returns:
         TSV content with Anki headers
     """
+    # Combine players - use Twins data if available (has MIN), otherwise optimal
+    all_players = {}
+    for player_name, franchises in optimal_players.items():
+        all_players[player_name] = franchises
+    for player_name, franchises in twins_players.items():
+        all_players[player_name] = franchises  # Twins data takes precedence
+
     lines = [
         "#separator:tab",
         "#html:true",
-        "#tags:minmaculate optimal player",
-        "#deck:Minmaculate Grid::Optimal Players",
+        "#tags:minmaculate player",
+        "#deck:Minmaculate Grid::Players",
         "Front\tBack",
     ]
 
-    for player_name in sorted(players.keys()):
-        franchises = format_franchises_alphabetical(players[player_name])
-        lines.append(f"{player_name}\t{franchises}")
-
-    return "\n".join(lines) + "\n"
-
-
-def generate_twins_player_cards(players: Dict[str, List[str]]) -> str:
-    """
-    Generate TSV content for Twins-constrained player cards.
-
-    Args:
-        players: Dict mapping player name to list of franchises
-
-    Returns:
-        TSV content with Anki headers
-    """
-    lines = [
-        "#separator:tab",
-        "#html:true",
-        "#tags:minmaculate twins player",
-        "#deck:Minmaculate Grid::Twins Players",
-        "Front\tBack",
-    ]
-
-    for player_name in sorted(players.keys()):
-        franchises = format_franchises_twins_first(players[player_name])
+    for player_name in sorted(all_players.keys()):
+        franchises = format_franchises(all_players[player_name])
         lines.append(f"{player_name}\t{franchises}")
 
     return "\n".join(lines) + "\n"
 
 
 def generate_pair_cards(
-    db: Database,
-    optimal_player_ids: Set[str],
-    twins_player_ids: Set[str]
+    db: Database, optimal_player_ids: Set[str], twins_player_ids: Set[str]
 ) -> str:
     """
     Generate TSV content for franchise pair cards.
@@ -303,19 +279,15 @@ def main():
     if twins_not_found:
         print(f"  Warning: Twins players not found in DB: {twins_not_found}")
 
-    # Generate optimal player cards
-    print("Generating optimal player cards...")
-    optimal_content = generate_optimal_player_cards(optimal_players)
-    optimal_output = output_dir / "optimal_players.txt"
-    optimal_output.write_text(optimal_content, encoding="utf-8")
-    print(f"  Written to {optimal_output}")
+    # Generate combined player cards (union of optimal + twins)
+    print("Generating player cards...")
+    players_content = generate_player_cards(optimal_players, twins_players)
+    players_output = output_dir / "players.txt"
+    players_output.write_text(players_content, encoding="utf-8")
 
-    # Generate twins player cards
-    print("Generating Twins player cards...")
-    twins_content = generate_twins_player_cards(twins_players)
-    twins_output = output_dir / "twins_players.txt"
-    twins_output.write_text(twins_content, encoding="utf-8")
-    print(f"  Written to {twins_output}")
+    # Count unique players
+    all_player_names = set(optimal_players.keys()) | set(twins_players.keys())
+    print(f"  Written to {players_output}")
 
     # Generate pair cards
     print("Generating pair cards...")
@@ -329,9 +301,10 @@ def main():
 
     # Summary
     print("\nSummary:")
-    print(f"  optimal_players.txt: {len(optimal_players)} cards")
-    print(f"  twins_players.txt: {len(twins_players)} cards")
-    print(f"  pairs.txt: 435 cards")
+    print(
+        f"  players.txt: {len(all_player_names)} cards (union of {len(optimal_players)} optimal + {len(twins_players)} Twins)"
+    )
+    print("  pairs.txt: 435 cards")
     print("\nDone! Import the .txt files into Anki using File > Import.")
 
 
