@@ -217,11 +217,12 @@ def generate_pair_cards(
         optimal_players = get_players_covering_pair(db, f1, f2, optimal_player_ids)
         twins_players = get_players_covering_pair(db, f1, f2, twins_player_ids)
 
-        # Format back with HTML
-        optimal_str = ", ".join(optimal_players) if optimal_players else "(none)"
-        twins_str = ", ".join(twins_players) if twins_players else "(none)"
+        # Twins players first with asterisk, then optimal-only players
+        twins_set = set(twins_players)
+        optimal_only = [p for p in optimal_players if p not in twins_set]
 
-        back = f"<b>Optimal:</b> {optimal_str}<br><b>Twins:</b> {twins_str}"
+        player_list = [f"{p}*" for p in twins_players] + optimal_only
+        back = ", ".join(player_list) if player_list else "(none)"
         lines.append(f"{front}\t{back}")
 
     return "\n".join(lines) + "\n"
