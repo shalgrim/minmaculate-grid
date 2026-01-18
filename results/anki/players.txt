@@ -1,0 +1,51 @@
+#separator:tab
+#html:true
+#tags:minmaculate player
+#deck:Minmaculate Grid::Players
+Front	Back
+Alex Colome	MIN, CHW, COL, SEA, TBD
+Anthony Swarzak	MIN, ARI, ATL, CHW, CLE, KCR, MIL, NYM, NYY, SEA
+Bill Krueger	MIN, DET, LAD, MIL, OAK, SDP, SEA, WSN
+Billy Hamilton	MIN, ATL, CHC, CHW, CIN, FLA, KCR, NYM
+Bob Miller	MIN, CHC, CHW, CLE, DET, LAD, NYM, PIT, SDP, STL
+Bruce Chen	ATL, BAL, BOS, CIN, CLE, HOU, KCR, NYM, PHI, TEX, WSN
+Carlos Gomez	MIN, HOU, MIL, NYM, TBD, TEX
+Chase Anderson	ARI, BOS, CIN, COL, MIL, PHI, TBD, TEX, TOR
+Dan Schatzeder	MIN, CLE, DET, HOU, KCR, NYM, PHI, SFG, WSN
+Dennis Cook	ANA, CHW, CLE, FLA, LAD, NYM, PHI, SFG, TEX
+Dennys Reyes	MIN, ARI, BOS, CIN, COL, KCR, LAD, PIT, SDP, STL, TEX
+Edgar Renteria	ATL, BOS, CIN, DET, FLA, SFG, STL
+Edwin Jackson	ARI, ATL, BAL, CHC, CHW, DET, FLA, LAD, OAK, SDP, STL, TBD, TOR, WSN
+Fernando Rodney	MIN, ANA, ARI, CHC, DET, FLA, OAK, SDP, SEA, TBD, WSN
+Gio Urshela	MIN, ANA, ATL, CLE, DET, NYY, TOR
+Gregg Olson	MIN, ARI, ATL, BAL, CLE, DET, HOU, KCR, LAD
+J. A. Happ	MIN, HOU, NYY, PHI, PIT, SEA, STL, TOR
+Jake Odorizzi	MIN, ATL, HOU, KCR, TBD
+Jay Jackson	MIN, ATL, MIL, SDP, SFG, TOR
+Jose Cruz	ARI, BOS, HOU, LAD, SDP, SEA, SFG, TBD, TOR
+Jose Guillen	ANA, ARI, CIN, KCR, OAK, PIT, SEA, SFG, TBD, WSN
+Ken Brett	MIN, ANA, BOS, CHW, KCR, LAD, MIL, NYY, PHI, PIT
+Kyle Lohse	MIN, CIN, MIL, PHI, STL, TEX
+LaTroy Hawkins	MIN, ANA, BAL, CHC, COL, HOU, MIL, NYM, NYY, SFG, TOR
+Lance Parrish	ANA, CLE, DET, PHI, PIT, SEA, TOR
+Lew Burdette	ANA, ATL, CHC, NYY, PHI, STL
+Logan Morrison	MIN, FLA, MIL, PHI, SEA, TBD
+Luis Ayala	MIN, ATL, BAL, FLA, NYM, NYY, WSN
+Mark Redman	MIN, ATL, COL, DET, FLA, KCR, OAK, PIT
+Matt Belisle	MIN, CIN, CLE, COL, STL, WSN
+Matt Stairs	BOS, CHC, DET, KCR, MIL, OAK, PHI, PIT, SDP, TEX, TOR, WSN
+Mike Morgan	MIN, ARI, BAL, CHC, CIN, LAD, NYY, OAK, SEA, STL, TEX, TOR
+Octavio Dotel	ATL, CHW, COL, DET, HOU, KCR, LAD, NYM, NYY, OAK, PIT, STL, TOR
+Orlando Cabrera	MIN, ANA, BOS, CHW, CIN, CLE, OAK, SFG, WSN
+Orlando Merced	MIN, BOS, CHC, HOU, PIT, TOR, WSN
+Pat Borders	MIN, ANA, CHW, CLE, HOU, KCR, SEA, STL, TOR
+Pat Neshek	MIN, COL, HOU, OAK, PHI, SDP, STL
+Rich Hill	MIN, ANA, BAL, BOS, CHC, CLE, LAD, NYM, NYY, OAK, PIT, SDP, TBD
+Ron Kline	MIN, ANA, ATL, BOS, DET, PIT, SFG, STL, TEX
+Ron Villone	CIN, CLE, COL, FLA, HOU, MIL, NYY, PIT, SDP, SEA, STL, WSN
+Roy Sievers	MIN, BAL, CHW, PHI, TEX
+Sandy Leon	MIN, BOS, CLE, FLA, TEX, WSN
+Sergio Romo	MIN, FLA, LAD, OAK, SEA, SFG, TBD, TOR
+Taylor Motter	MIN, BOS, CIN, COL, SEA, STL, TBD
+Terry Mulholland	MIN, ARI, ATL, CHC, CLE, LAD, NYY, PHI, PIT, SEA, SFG
+Todd Jones	MIN, BOS, CIN, COL, DET, FLA, HOU, PHI
