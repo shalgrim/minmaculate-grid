@@ -86,7 +86,29 @@ Shows:
 - Approximation ratio (1.1053)
 - Player overlap analysis
 
-### 4. Start Web Interface
+### 4. Franchise-Constrained Solver
+
+Find the minimum players who ALL played for a specific franchise:
+
+```bash
+# Find MIN-constrained solution (includes Washington Senators history)
+python scripts/solve_for_franchise.py MIN
+
+# Run only greedy solver (faster)
+python scripts/solve_for_franchise.py NYY --greedy
+
+# Save results to markdown file
+python scripts/solve_for_franchise.py MIN --output results/min_solution.md
+
+# Custom time limit for exact solver (default: 600s)
+python scripts/solve_for_franchise.py LAD --time-limit 300
+```
+
+This finds players who played for the target franchise AND enough other teams to cover all 435 pairs. Some pairs may be uncoverable if no player from that franchise played for both teams in the pair.
+
+**Example**: MIN-constrained solution requires **34 players** (optimal) covering 434/435 pairs. The FLA-STL pair is uncoverable because no Twins/Senators player ever played for both Florida and St. Louis.
+
+### 5. Start Web Interface
 
 ```bash
 # Start FastAPI server
@@ -104,7 +126,7 @@ uvicorn web.api:app --reload --port 8000
 - Player search and lookup
 - Franchise pair lookup (find all players who played for two teams)
 
-### 5. Run Tests
+### 6. Run Tests
 
 ```bash
 # Run all tests
