@@ -1,0 +1,440 @@
+#separator:tab
+#html:true
+#tags:minmaculate pair
+#deck:Minmaculate Grid::Pairs
+Front	Back
+ANA - ARI	<b>Optimal:</b> Fernando Rodney, Jose Guillen<br><b>Twins:</b> Fernando Rodney
+ANA - ATL	<b>Optimal:</b> Lew Burdette<br><b>Twins:</b> Gio Urshela, Ron Kline
+ANA - BAL	<b>Optimal:</b> LaTroy Hawkins, Rich Hill<br><b>Twins:</b> LaTroy Hawkins, Rich Hill
+ANA - BOS	<b>Optimal:</b> Ken Brett, Rich Hill<br><b>Twins:</b> Ken Brett, Orlando Cabrera, Rich Hill, Ron Kline
+ANA - CHC	<b>Optimal:</b> Fernando Rodney, LaTroy Hawkins, Lew Burdette, Rich Hill<br><b>Twins:</b> Fernando Rodney, LaTroy Hawkins, Rich Hill
+ANA - CHW	<b>Optimal:</b> Dennis Cook, Ken Brett<br><b>Twins:</b> Ken Brett, Orlando Cabrera, Pat Borders
+ANA - CIN	<b>Optimal:</b> Jose Guillen<br><b>Twins:</b> Orlando Cabrera
+ANA - CLE	<b>Optimal:</b> Dennis Cook, Lance Parrish, Rich Hill<br><b>Twins:</b> Gio Urshela, Orlando Cabrera, Pat Borders, Rich Hill
+ANA - COL	<b>Optimal:</b> LaTroy Hawkins<br><b>Twins:</b> LaTroy Hawkins
+ANA - DET	<b>Optimal:</b> Fernando Rodney, Lance Parrish<br><b>Twins:</b> Fernando Rodney, Gio Urshela, Ron Kline
+ANA - FLA	<b>Optimal:</b> Dennis Cook, Fernando Rodney<br><b>Twins:</b> Fernando Rodney
+ANA - HOU	<b>Optimal:</b> LaTroy Hawkins<br><b>Twins:</b> LaTroy Hawkins, Pat Borders
+ANA - KCR	<b>Optimal:</b> Jose Guillen, Ken Brett<br><b>Twins:</b> Ken Brett, Pat Borders
+ANA - LAD	<b>Optimal:</b> Dennis Cook, Ken Brett, Rich Hill<br><b>Twins:</b> Ken Brett, Rich Hill
+ANA - MIL	<b>Optimal:</b> Ken Brett, LaTroy Hawkins<br><b>Twins:</b> Ken Brett, LaTroy Hawkins
+ANA - MIN	<b>Optimal:</b> Fernando Rodney, Ken Brett, LaTroy Hawkins, Rich Hill<br><b>Twins:</b> Fernando Rodney, Gio Urshela, Ken Brett, LaTroy Hawkins, Orlando Cabrera, Pat Borders, Rich Hill, Ron Kline
+ANA - NYM	<b>Optimal:</b> Dennis Cook, LaTroy Hawkins, Rich Hill<br><b>Twins:</b> LaTroy Hawkins, Rich Hill
+ANA - NYY	<b>Optimal:</b> Ken Brett, LaTroy Hawkins, Lew Burdette, Rich Hill<br><b>Twins:</b> Gio Urshela, Ken Brett, LaTroy Hawkins, Rich Hill
+ANA - OAK	<b>Optimal:</b> Fernando Rodney, Jose Guillen, Rich Hill<br><b>Twins:</b> Fernando Rodney, Orlando Cabrera, Rich Hill
+ANA - PHI	<b>Optimal:</b> Dennis Cook, Ken Brett, Lance Parrish, Lew Burdette<br><b>Twins:</b> Ken Brett
+ANA - PIT	<b>Optimal:</b> Jose Guillen, Ken Brett, Lance Parrish, Rich Hill<br><b>Twins:</b> Ken Brett, Rich Hill, Ron Kline
+ANA - SDP	<b>Optimal:</b> Fernando Rodney, Rich Hill<br><b>Twins:</b> Fernando Rodney, Rich Hill
+ANA - SEA	<b>Optimal:</b> Fernando Rodney, Jose Guillen, Lance Parrish<br><b>Twins:</b> Fernando Rodney, Pat Borders
+ANA - SFG	<b>Optimal:</b> Dennis Cook, Jose Guillen, LaTroy Hawkins<br><b>Twins:</b> LaTroy Hawkins, Orlando Cabrera, Ron Kline
+ANA - STL	<b>Optimal:</b> Lew Burdette<br><b>Twins:</b> Pat Borders, Ron Kline
+ANA - TBD	<b>Optimal:</b> Fernando Rodney, Jose Guillen, Rich Hill<br><b>Twins:</b> Fernando Rodney, Rich Hill
+ANA - TEX	<b>Optimal:</b> Dennis Cook<br><b>Twins:</b> Ron Kline
+ANA - TOR	<b>Optimal:</b> LaTroy Hawkins, Lance Parrish<br><b>Twins:</b> Gio Urshela, LaTroy Hawkins, Pat Borders
+ANA - WSN	<b>Optimal:</b> Fernando Rodney, Jose Guillen<br><b>Twins:</b> Fernando Rodney, Orlando Cabrera
+ARI - ATL	<b>Optimal:</b> Anthony Swarzak, Edwin Jackson<br><b>Twins:</b> Anthony Swarzak, Gregg Olson, Terry Mulholland
+ARI - BAL	<b>Optimal:</b> Edwin Jackson, Mike Morgan<br><b>Twins:</b> Gregg Olson, Mike Morgan
+ARI - BOS	<b>Optimal:</b> Chase Anderson, Jose Cruz<br><b>Twins:</b> Dennys Reyes
+ARI - CHC	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Mike Morgan<br><b>Twins:</b> Fernando Rodney, Mike Morgan, Terry Mulholland
+ARI - CHW	<b>Optimal:</b> Anthony Swarzak, Edwin Jackson<br><b>Twins:</b> Anthony Swarzak
+ARI - CIN	<b>Optimal:</b> Chase Anderson, Jose Guillen, Mike Morgan<br><b>Twins:</b> Dennys Reyes, Mike Morgan
+ARI - CLE	<b>Optimal:</b> Anthony Swarzak<br><b>Twins:</b> Anthony Swarzak, Gregg Olson, Terry Mulholland
+ARI - COL	<b>Optimal:</b> Chase Anderson<br><b>Twins:</b> Dennys Reyes
+ARI - DET	<b>Optimal:</b> Edwin Jackson, Fernando Rodney<br><b>Twins:</b> Fernando Rodney, Gregg Olson
+ARI - FLA	<b>Optimal:</b> Edwin Jackson, Fernando Rodney<br><b>Twins:</b> Fernando Rodney
+ARI - HOU	<b>Optimal:</b> Jose Cruz<br><b>Twins:</b> Gregg Olson
+ARI - KCR	<b>Optimal:</b> Anthony Swarzak, Jose Guillen<br><b>Twins:</b> Anthony Swarzak, Dennys Reyes, Gregg Olson
+ARI - LAD	<b>Optimal:</b> Edwin Jackson, Jose Cruz, Mike Morgan<br><b>Twins:</b> Dennys Reyes, Gregg Olson, Mike Morgan, Terry Mulholland
+ARI - MIL	<b>Optimal:</b> Anthony Swarzak, Chase Anderson<br><b>Twins:</b> Anthony Swarzak
+ARI - MIN	<b>Optimal:</b> Anthony Swarzak, Fernando Rodney, Mike Morgan<br><b>Twins:</b> Anthony Swarzak, Dennys Reyes, Fernando Rodney, Gregg Olson, Mike Morgan, Terry Mulholland
+ARI - NYM	<b>Optimal:</b> Anthony Swarzak<br><b>Twins:</b> Anthony Swarzak
+ARI - NYY	<b>Optimal:</b> Anthony Swarzak, Mike Morgan<br><b>Twins:</b> Anthony Swarzak, Mike Morgan, Terry Mulholland
+ARI - OAK	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Jose Guillen, Mike Morgan<br><b>Twins:</b> Fernando Rodney, Mike Morgan
+ARI - PHI	<b>Optimal:</b> Chase Anderson<br><b>Twins:</b> Terry Mulholland
+ARI - PIT	<b>Optimal:</b> Jose Guillen<br><b>Twins:</b> Dennys Reyes, Terry Mulholland
+ARI - SDP	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Jose Cruz<br><b>Twins:</b> Dennys Reyes, Fernando Rodney
+ARI - SEA	<b>Optimal:</b> Anthony Swarzak, Fernando Rodney, Jose Cruz, Jose Guillen, Mike Morgan<br><b>Twins:</b> Anthony Swarzak, Fernando Rodney, Mike Morgan, Terry Mulholland
+ARI - SFG	<b>Optimal:</b> Jose Cruz, Jose Guillen<br><b>Twins:</b> Terry Mulholland
+ARI - STL	<b>Optimal:</b> Edwin Jackson, Mike Morgan<br><b>Twins:</b> Dennys Reyes, Mike Morgan
+ARI - TBD	<b>Optimal:</b> Chase Anderson, Edwin Jackson, Fernando Rodney, Jose Cruz, Jose Guillen<br><b>Twins:</b> Fernando Rodney
+ARI - TEX	<b>Optimal:</b> Chase Anderson, Mike Morgan<br><b>Twins:</b> Dennys Reyes, Mike Morgan
+ARI - TOR	<b>Optimal:</b> Chase Anderson, Edwin Jackson, Jose Cruz, Mike Morgan<br><b>Twins:</b> Mike Morgan
+ARI - WSN	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Jose Guillen<br><b>Twins:</b> Fernando Rodney
+ATL - BAL	<b>Optimal:</b> Bruce Chen, Edwin Jackson<br><b>Twins:</b> Gregg Olson, Luis Ayala
+ATL - BOS	<b>Optimal:</b> Bruce Chen, Edgar Renteria<br><b>Twins:</b> Ron Kline
+ATL - CHC	<b>Optimal:</b> Billy Hamilton, Edwin Jackson, Lew Burdette<br><b>Twins:</b> Billy Hamilton, Terry Mulholland
+ATL - CHW	<b>Optimal:</b> Anthony Swarzak, Billy Hamilton, Edwin Jackson, Octavio Dotel<br><b>Twins:</b> Anthony Swarzak, Billy Hamilton
+ATL - CIN	<b>Optimal:</b> Billy Hamilton, Bruce Chen, Edgar Renteria<br><b>Twins:</b> Billy Hamilton
+ATL - CLE	<b>Optimal:</b> Anthony Swarzak, Bruce Chen<br><b>Twins:</b> Anthony Swarzak, Gio Urshela, Gregg Olson, Terry Mulholland
+ATL - COL	<b>Optimal:</b> Octavio Dotel<br><b>Twins:</b> Mark Redman
+ATL - DET	<b>Optimal:</b> Edgar Renteria, Edwin Jackson, Octavio Dotel<br><b>Twins:</b> Gio Urshela, Gregg Olson, Mark Redman, Ron Kline
+ATL - FLA	<b>Optimal:</b> Billy Hamilton, Edgar Renteria, Edwin Jackson<br><b>Twins:</b> Billy Hamilton, Luis Ayala, Mark Redman
+ATL - HOU	<b>Optimal:</b> Bruce Chen, Octavio Dotel<br><b>Twins:</b> Gregg Olson, Jake Odorizzi
+ATL - KCR	<b>Optimal:</b> Anthony Swarzak, Billy Hamilton, Bruce Chen, Octavio Dotel<br><b>Twins:</b> Anthony Swarzak, Billy Hamilton, Gregg Olson, Jake Odorizzi, Mark Redman
+ATL - LAD	<b>Optimal:</b> Edwin Jackson, Octavio Dotel<br><b>Twins:</b> Gregg Olson, Terry Mulholland
+ATL - MIL	<b>Optimal:</b> Anthony Swarzak<br><b>Twins:</b> Anthony Swarzak, Jay Jackson
+ATL - MIN	<b>Optimal:</b> Anthony Swarzak, Billy Hamilton<br><b>Twins:</b> Anthony Swarzak, Billy Hamilton, Gio Urshela, Gregg Olson, Jake Odorizzi, Jay Jackson, Luis Ayala, Mark Redman, Ron Kline, Terry Mulholland
+ATL - NYM	<b>Optimal:</b> Anthony Swarzak, Billy Hamilton, Bruce Chen, Octavio Dotel<br><b>Twins:</b> Anthony Swarzak, Billy Hamilton, Luis Ayala
+ATL - NYY	<b>Optimal:</b> Anthony Swarzak, Lew Burdette, Octavio Dotel<br><b>Twins:</b> Anthony Swarzak, Gio Urshela, Luis Ayala, Terry Mulholland
+ATL - OAK	<b>Optimal:</b> Edwin Jackson, Octavio Dotel<br><b>Twins:</b> Mark Redman
+ATL - PHI	<b>Optimal:</b> Bruce Chen, Lew Burdette<br><b>Twins:</b> Terry Mulholland
+ATL - PIT	<b>Optimal:</b> Octavio Dotel<br><b>Twins:</b> Mark Redman, Ron Kline, Terry Mulholland
+ATL - SDP	<b>Optimal:</b> Edwin Jackson<br><b>Twins:</b> Jay Jackson
+ATL - SEA	<b>Optimal:</b> Anthony Swarzak<br><b>Twins:</b> Anthony Swarzak, Terry Mulholland
+ATL - SFG	<b>Optimal:</b> Edgar Renteria<br><b>Twins:</b> Jay Jackson, Ron Kline, Terry Mulholland
+ATL - STL	<b>Optimal:</b> Edgar Renteria, Edwin Jackson, Lew Burdette, Octavio Dotel<br><b>Twins:</b> Ron Kline
+ATL - TBD	<b>Optimal:</b> Edwin Jackson<br><b>Twins:</b> Jake Odorizzi
+ATL - TEX	<b>Optimal:</b> Bruce Chen<br><b>Twins:</b> Ron Kline
+ATL - TOR	<b>Optimal:</b> Edwin Jackson, Octavio Dotel<br><b>Twins:</b> Gio Urshela, Jay Jackson
+ATL - WSN	<b>Optimal:</b> Bruce Chen, Edwin Jackson<br><b>Twins:</b> Luis Ayala
+BAL - BOS	<b>Optimal:</b> Bruce Chen, Rich Hill<br><b>Twins:</b> Rich Hill
+BAL - CHC	<b>Optimal:</b> Edwin Jackson, LaTroy Hawkins, Mike Morgan, Rich Hill<br><b>Twins:</b> LaTroy Hawkins, Mike Morgan, Rich Hill
+BAL - CHW	<b>Optimal:</b> Edwin Jackson<br><b>Twins:</b> Roy Sievers
+BAL - CIN	<b>Optimal:</b> Bruce Chen, Mike Morgan<br><b>Twins:</b> Mike Morgan
+BAL - CLE	<b>Optimal:</b> Bruce Chen, Rich Hill<br><b>Twins:</b> Gregg Olson, Rich Hill
+BAL - COL	<b>Optimal:</b> LaTroy Hawkins<br><b>Twins:</b> LaTroy Hawkins
+BAL - DET	<b>Optimal:</b> Edwin Jackson<br><b>Twins:</b> Gregg Olson
+BAL - FLA	<b>Optimal:</b> Edwin Jackson<br><b>Twins:</b> Luis Ayala
+BAL - HOU	<b>Optimal:</b> Bruce Chen, LaTroy Hawkins<br><b>Twins:</b> Gregg Olson, LaTroy Hawkins
+BAL - KCR	<b>Optimal:</b> Bruce Chen<br><b>Twins:</b> Gregg Olson
+BAL - LAD	<b>Optimal:</b> Edwin Jackson, Mike Morgan, Rich Hill<br><b>Twins:</b> Gregg Olson, Mike Morgan, Rich Hill
+BAL - MIL	<b>Optimal:</b> LaTroy Hawkins<br><b>Twins:</b> LaTroy Hawkins
+BAL - MIN	<b>Optimal:</b> LaTroy Hawkins, Mike Morgan, Rich Hill<br><b>Twins:</b> Gregg Olson, LaTroy Hawkins, Luis Ayala, Mike Morgan, Rich Hill, Roy Sievers
+BAL - NYM	<b>Optimal:</b> Bruce Chen, LaTroy Hawkins, Rich Hill<br><b>Twins:</b> LaTroy Hawkins, Luis Ayala, Rich Hill
+BAL - NYY	<b>Optimal:</b> LaTroy Hawkins, Mike Morgan, Rich Hill<br><b>Twins:</b> LaTroy Hawkins, Luis Ayala, Mike Morgan, Rich Hill
+BAL - OAK	<b>Optimal:</b> Edwin Jackson, Mike Morgan, Rich Hill<br><b>Twins:</b> Mike Morgan, Rich Hill
+BAL - PHI	<b>Optimal:</b> Bruce Chen<br><b>Twins:</b> Roy Sievers
+BAL - PIT	<b>Optimal:</b> Rich Hill<br><b>Twins:</b> Rich Hill
+BAL - SDP	<b>Optimal:</b> Edwin Jackson, Rich Hill<br><b>Twins:</b> Rich Hill
+BAL - SEA	<b>Optimal:</b> Mike Morgan<br><b>Twins:</b> Mike Morgan
+BAL - SFG	<b>Optimal:</b> LaTroy Hawkins<br><b>Twins:</b> LaTroy Hawkins
+BAL - STL	<b>Optimal:</b> Edwin Jackson, Mike Morgan<br><b>Twins:</b> Mike Morgan
+BAL - TBD	<b>Optimal:</b> Edwin Jackson, Rich Hill<br><b>Twins:</b> Rich Hill
+BAL - TEX	<b>Optimal:</b> Bruce Chen, Mike Morgan<br><b>Twins:</b> Mike Morgan, Roy Sievers
+BAL - TOR	<b>Optimal:</b> Edwin Jackson, LaTroy Hawkins, Mike Morgan<br><b>Twins:</b> LaTroy Hawkins, Mike Morgan
+BAL - WSN	<b>Optimal:</b> Bruce Chen, Edwin Jackson<br><b>Twins:</b> Luis Ayala
+BOS - CHC	<b>Optimal:</b> Matt Stairs, Rich Hill<br><b>Twins:</b> Orlando Merced, Rich Hill
+BOS - CHW	<b>Optimal:</b> Ken Brett<br><b>Twins:</b> Ken Brett, Orlando Cabrera
+BOS - CIN	<b>Optimal:</b> Bruce Chen, Chase Anderson, Edgar Renteria<br><b>Twins:</b> Dennys Reyes, Orlando Cabrera, Taylor Motter, Todd Jones
+BOS - CLE	<b>Optimal:</b> Bruce Chen, Rich Hill<br><b>Twins:</b> Orlando Cabrera, Rich Hill, Sandy Leon
+BOS - COL	<b>Optimal:</b> Chase Anderson<br><b>Twins:</b> Dennys Reyes, Taylor Motter, Todd Jones
+BOS - DET	<b>Optimal:</b> Edgar Renteria, Matt Stairs<br><b>Twins:</b> Ron Kline, Todd Jones
+BOS - FLA	<b>Optimal:</b> Edgar Renteria<br><b>Twins:</b> Sandy Leon, Todd Jones
+BOS - HOU	<b>Optimal:</b> Bruce Chen, Jose Cruz<br><b>Twins:</b> Orlando Merced, Todd Jones
+BOS - KCR	<b>Optimal:</b> Bruce Chen, Ken Brett, Matt Stairs<br><b>Twins:</b> Dennys Reyes, Ken Brett
+BOS - LAD	<b>Optimal:</b> Jose Cruz, Ken Brett, Rich Hill<br><b>Twins:</b> Dennys Reyes, Ken Brett, Rich Hill
+BOS - MIL	<b>Optimal:</b> Chase Anderson, Ken Brett, Matt Stairs<br><b>Twins:</b> Ken Brett
+BOS - MIN	<b>Optimal:</b> Ken Brett, Rich Hill<br><b>Twins:</b> Dennys Reyes, Ken Brett, Orlando Cabrera, Orlando Merced, Rich Hill, Ron Kline, Sandy Leon, Taylor Motter, Todd Jones
+BOS - NYM	<b>Optimal:</b> Bruce Chen, Rich Hill<br><b>Twins:</b> Rich Hill
+BOS - NYY	<b>Optimal:</b> Ken Brett, Rich Hill<br><b>Twins:</b> Ken Brett, Rich Hill
+BOS - OAK	<b>Optimal:</b> Matt Stairs, Rich Hill<br><b>Twins:</b> Orlando Cabrera, Rich Hill
+BOS - PHI	<b>Optimal:</b> Bruce Chen, Chase Anderson, Ken Brett, Matt Stairs<br><b>Twins:</b> Ken Brett, Todd Jones
+BOS - PIT	<b>Optimal:</b> Ken Brett, Matt Stairs, Rich Hill<br><b>Twins:</b> Dennys Reyes, Ken Brett, Orlando Merced, Rich Hill, Ron Kline
+BOS - SDP	<b>Optimal:</b> Jose Cruz, Matt Stairs, Rich Hill<br><b>Twins:</b> Dennys Reyes, Rich Hill
+BOS - SEA	<b>Optimal:</b> Jose Cruz<br><b>Twins:</b> Taylor Motter
+BOS - SFG	<b>Optimal:</b> Edgar Renteria, Jose Cruz<br><b>Twins:</b> Orlando Cabrera, Ron Kline
+BOS - STL	<b>Optimal:</b> Edgar Renteria<br><b>Twins:</b> Dennys Reyes, Ron Kline, Taylor Motter
+BOS - TBD	<b>Optimal:</b> Chase Anderson, Jose Cruz, Rich Hill<br><b>Twins:</b> Rich Hill, Taylor Motter
+BOS - TEX	<b>Optimal:</b> Bruce Chen, Chase Anderson, Matt Stairs<br><b>Twins:</b> Dennys Reyes, Ron Kline, Sandy Leon
+BOS - TOR	<b>Optimal:</b> Chase Anderson, Jose Cruz, Matt Stairs<br><b>Twins:</b> Orlando Merced
+BOS - WSN	<b>Optimal:</b> Bruce Chen, Matt Stairs<br><b>Twins:</b> Orlando Cabrera, Orlando Merced, Sandy Leon
+CHC - CHW	<b>Optimal:</b> Billy Hamilton, Edwin Jackson<br><b>Twins:</b> Billy Hamilton, Bob Miller
+CHC - CIN	<b>Optimal:</b> Billy Hamilton, Mike Morgan<br><b>Twins:</b> Billy Hamilton, Mike Morgan
+CHC - CLE	<b>Optimal:</b> Rich Hill<br><b>Twins:</b> Bob Miller, Rich Hill, Terry Mulholland
+CHC - COL	<b>Optimal:</b> LaTroy Hawkins<br><b>Twins:</b> LaTroy Hawkins
+CHC - DET	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Matt Stairs<br><b>Twins:</b> Bob Miller, Fernando Rodney
+CHC - FLA	<b>Optimal:</b> Billy Hamilton, Edwin Jackson, Fernando Rodney<br><b>Twins:</b> Billy Hamilton, Fernando Rodney
+CHC - HOU	<b>Optimal:</b> LaTroy Hawkins<br><b>Twins:</b> LaTroy Hawkins, Orlando Merced
+CHC - KCR	<b>Optimal:</b> Billy Hamilton, Matt Stairs<br><b>Twins:</b> Billy Hamilton
+CHC - LAD	<b>Optimal:</b> Edwin Jackson, Mike Morgan, Rich Hill<br><b>Twins:</b> Bob Miller, Mike Morgan, Rich Hill, Terry Mulholland
+CHC - MIL	<b>Optimal:</b> LaTroy Hawkins, Matt Stairs<br><b>Twins:</b> LaTroy Hawkins
+CHC - MIN	<b>Optimal:</b> Billy Hamilton, Fernando Rodney, LaTroy Hawkins, Mike Morgan, Rich Hill<br><b>Twins:</b> Billy Hamilton, Bob Miller, Fernando Rodney, LaTroy Hawkins, Mike Morgan, Orlando Merced, Rich Hill, Terry Mulholland
+CHC - NYM	<b>Optimal:</b> Billy Hamilton, LaTroy Hawkins, Rich Hill<br><b>Twins:</b> Billy Hamilton, Bob Miller, LaTroy Hawkins, Rich Hill
+CHC - NYY	<b>Optimal:</b> LaTroy Hawkins, Lew Burdette, Mike Morgan, Rich Hill<br><b>Twins:</b> LaTroy Hawkins, Mike Morgan, Rich Hill, Terry Mulholland
+CHC - OAK	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Matt Stairs, Mike Morgan, Rich Hill<br><b>Twins:</b> Fernando Rodney, Mike Morgan, Rich Hill
+CHC - PHI	<b>Optimal:</b> Lew Burdette, Matt Stairs<br><b>Twins:</b> Terry Mulholland
+CHC - PIT	<b>Optimal:</b> Matt Stairs, Rich Hill<br><b>Twins:</b> Bob Miller, Orlando Merced, Rich Hill, Terry Mulholland
+CHC - SDP	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Matt Stairs, Rich Hill<br><b>Twins:</b> Bob Miller, Fernando Rodney, Rich Hill
+CHC - SEA	<b>Optimal:</b> Fernando Rodney, Mike Morgan<br><b>Twins:</b> Fernando Rodney, Mike Morgan, Terry Mulholland
+CHC - SFG	<b>Optimal:</b> LaTroy Hawkins<br><b>Twins:</b> LaTroy Hawkins, Terry Mulholland
+CHC - STL	<b>Optimal:</b> Edwin Jackson, Lew Burdette, Mike Morgan<br><b>Twins:</b> Bob Miller, Mike Morgan
+CHC - TBD	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Rich Hill<br><b>Twins:</b> Fernando Rodney, Rich Hill
+CHC - TEX	<b>Optimal:</b> Matt Stairs, Mike Morgan<br><b>Twins:</b> Mike Morgan
+CHC - TOR	<b>Optimal:</b> Edwin Jackson, LaTroy Hawkins, Matt Stairs, Mike Morgan<br><b>Twins:</b> LaTroy Hawkins, Mike Morgan, Orlando Merced
+CHC - WSN	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Matt Stairs<br><b>Twins:</b> Fernando Rodney, Orlando Merced
+CHW - CIN	<b>Optimal:</b> Billy Hamilton<br><b>Twins:</b> Billy Hamilton, Orlando Cabrera
+CHW - CLE	<b>Optimal:</b> Anthony Swarzak, Dennis Cook<br><b>Twins:</b> Anthony Swarzak, Bob Miller, Orlando Cabrera, Pat Borders
+CHW - COL	<b>Optimal:</b> Octavio Dotel<br><b>Twins:</b> Alex Colome
+CHW - DET	<b>Optimal:</b> Edwin Jackson, Octavio Dotel<br><b>Twins:</b> Bob Miller
+CHW - FLA	<b>Optimal:</b> Billy Hamilton, Dennis Cook, Edwin Jackson<br><b>Twins:</b> Billy Hamilton
+CHW - HOU	<b>Optimal:</b> Octavio Dotel<br><b>Twins:</b> Pat Borders
+CHW - KCR	<b>Optimal:</b> Anthony Swarzak, Billy Hamilton, Ken Brett, Octavio Dotel<br><b>Twins:</b> Anthony Swarzak, Billy Hamilton, Ken Brett, Pat Borders
+CHW - LAD	<b>Optimal:</b> Dennis Cook, Edwin Jackson, Ken Brett, Octavio Dotel<br><b>Twins:</b> Bob Miller, Ken Brett
+CHW - MIL	<b>Optimal:</b> Anthony Swarzak, Ken Brett<br><b>Twins:</b> Anthony Swarzak, Ken Brett
+CHW - MIN	<b>Optimal:</b> Anthony Swarzak, Billy Hamilton, Ken Brett<br><b>Twins:</b> Alex Colome, Anthony Swarzak, Billy Hamilton, Bob Miller, Ken Brett, Orlando Cabrera, Pat Borders, Roy Sievers
+CHW - NYM	<b>Optimal:</b> Anthony Swarzak, Billy Hamilton, Dennis Cook, Octavio Dotel<br><b>Twins:</b> Anthony Swarzak, Billy Hamilton, Bob Miller
+CHW - NYY	<b>Optimal:</b> Anthony Swarzak, Ken Brett, Octavio Dotel<br><b>Twins:</b> Anthony Swarzak, Ken Brett
+CHW - OAK	<b>Optimal:</b> Edwin Jackson, Octavio Dotel<br><b>Twins:</b> Orlando Cabrera
+CHW - PHI	<b>Optimal:</b> Dennis Cook, Ken Brett<br><b>Twins:</b> Ken Brett, Roy Sievers
+CHW - PIT	<b>Optimal:</b> Ken Brett, Octavio Dotel<br><b>Twins:</b> Bob Miller, Ken Brett
+CHW - SDP	<b>Optimal:</b> Edwin Jackson<br><b>Twins:</b> Bob Miller
+CHW - SEA	<b>Optimal:</b> Anthony Swarzak<br><b>Twins:</b> Alex Colome, Anthony Swarzak, Pat Borders
+CHW - SFG	<b>Optimal:</b> Dennis Cook<br><b>Twins:</b> Orlando Cabrera
+CHW - STL	<b>Optimal:</b> Edwin Jackson, Octavio Dotel<br><b>Twins:</b> Bob Miller, Pat Borders
+CHW - TBD	<b>Optimal:</b> Edwin Jackson<br><b>Twins:</b> Alex Colome
+CHW - TEX	<b>Optimal:</b> Dennis Cook<br><b>Twins:</b> Roy Sievers
+CHW - TOR	<b>Optimal:</b> Edwin Jackson, Octavio Dotel<br><b>Twins:</b> Pat Borders
+CHW - WSN	<b>Optimal:</b> Edwin Jackson<br><b>Twins:</b> Orlando Cabrera
+CIN - CLE	<b>Optimal:</b> Bruce Chen, Ron Villone<br><b>Twins:</b> Matt Belisle, Orlando Cabrera
+CIN - COL	<b>Optimal:</b> Chase Anderson, Ron Villone<br><b>Twins:</b> Dennys Reyes, Matt Belisle, Taylor Motter, Todd Jones
+CIN - DET	<b>Optimal:</b> Edgar Renteria<br><b>Twins:</b> Todd Jones
+CIN - FLA	<b>Optimal:</b> Billy Hamilton, Edgar Renteria, Ron Villone<br><b>Twins:</b> Billy Hamilton, Todd Jones
+CIN - HOU	<b>Optimal:</b> Bruce Chen, Ron Villone<br><b>Twins:</b> Todd Jones
+CIN - KCR	<b>Optimal:</b> Billy Hamilton, Bruce Chen, Jose Guillen<br><b>Twins:</b> Billy Hamilton, Dennys Reyes
+CIN - LAD	<b>Optimal:</b> Mike Morgan<br><b>Twins:</b> Dennys Reyes, Mike Morgan
+CIN - MIL	<b>Optimal:</b> Chase Anderson, Ron Villone<br><b>Twins:</b> Kyle Lohse
+CIN - MIN	<b>Optimal:</b> Billy Hamilton, Mike Morgan<br><b>Twins:</b> Billy Hamilton, Dennys Reyes, Kyle Lohse, Matt Belisle, Mike Morgan, Orlando Cabrera, Taylor Motter, Todd Jones
+CIN - NYM	<b>Optimal:</b> Billy Hamilton, Bruce Chen<br><b>Twins:</b> Billy Hamilton
+CIN - NYY	<b>Optimal:</b> Mike Morgan, Ron Villone<br><b>Twins:</b> Mike Morgan
+CIN - OAK	<b>Optimal:</b> Jose Guillen, Mike Morgan<br><b>Twins:</b> Mike Morgan, Orlando Cabrera
+CIN - PHI	<b>Optimal:</b> Bruce Chen, Chase Anderson<br><b>Twins:</b> Kyle Lohse, Todd Jones
+CIN - PIT	<b>Optimal:</b> Jose Guillen, Ron Villone<br><b>Twins:</b> Dennys Reyes
+CIN - SDP	<b>Optimal:</b> Ron Villone<br><b>Twins:</b> Dennys Reyes
+CIN - SEA	<b>Optimal:</b> Jose Guillen, Mike Morgan, Ron Villone<br><b>Twins:</b> Mike Morgan, Taylor Motter
+CIN - SFG	<b>Optimal:</b> Edgar Renteria, Jose Guillen<br><b>Twins:</b> Orlando Cabrera
+CIN - STL	<b>Optimal:</b> Edgar Renteria, Mike Morgan, Ron Villone<br><b>Twins:</b> Dennys Reyes, Kyle Lohse, Matt Belisle, Mike Morgan, Taylor Motter
+CIN - TBD	<b>Optimal:</b> Chase Anderson, Jose Guillen<br><b>Twins:</b> Taylor Motter
+CIN - TEX	<b>Optimal:</b> Bruce Chen, Chase Anderson, Mike Morgan<br><b>Twins:</b> Dennys Reyes, Kyle Lohse, Mike Morgan
+CIN - TOR	<b>Optimal:</b> Chase Anderson, Mike Morgan<br><b>Twins:</b> Mike Morgan
+CIN - WSN	<b>Optimal:</b> Bruce Chen, Jose Guillen, Ron Villone<br><b>Twins:</b> Matt Belisle, Orlando Cabrera
+CLE - COL	<b>Optimal:</b> Ron Villone<br><b>Twins:</b> Matt Belisle
+CLE - DET	<b>Optimal:</b> Lance Parrish<br><b>Twins:</b> Bob Miller, Dan Schatzeder, Gio Urshela, Gregg Olson
+CLE - FLA	<b>Optimal:</b> Dennis Cook, Ron Villone<br><b>Twins:</b> Sandy Leon
+CLE - HOU	<b>Optimal:</b> Bruce Chen, Ron Villone<br><b>Twins:</b> Dan Schatzeder, Gregg Olson, Pat Borders
+CLE - KCR	<b>Optimal:</b> Anthony Swarzak, Bruce Chen<br><b>Twins:</b> Anthony Swarzak, Dan Schatzeder, Gregg Olson, Pat Borders
+CLE - LAD	<b>Optimal:</b> Dennis Cook, Rich Hill<br><b>Twins:</b> Bob Miller, Gregg Olson, Rich Hill, Terry Mulholland
+CLE - MIL	<b>Optimal:</b> Anthony Swarzak, Ron Villone<br><b>Twins:</b> Anthony Swarzak
+CLE - MIN	<b>Optimal:</b> Anthony Swarzak, Rich Hill<br><b>Twins:</b> Anthony Swarzak, Bob Miller, Dan Schatzeder, Gio Urshela, Gregg Olson, Matt Belisle, Orlando Cabrera, Pat Borders, Rich Hill, Sandy Leon, Terry Mulholland
+CLE - NYM	<b>Optimal:</b> Anthony Swarzak, Bruce Chen, Dennis Cook, Rich Hill<br><b>Twins:</b> Anthony Swarzak, Bob Miller, Dan Schatzeder, Rich Hill
+CLE - NYY	<b>Optimal:</b> Anthony Swarzak, Rich Hill, Ron Villone<br><b>Twins:</b> Anthony Swarzak, Gio Urshela, Rich Hill, Terry Mulholland
+CLE - OAK	<b>Optimal:</b> Rich Hill<br><b>Twins:</b> Orlando Cabrera, Rich Hill
+CLE - PHI	<b>Optimal:</b> Bruce Chen, Dennis Cook, Lance Parrish<br><b>Twins:</b> Dan Schatzeder, Terry Mulholland
+CLE - PIT	<b>Optimal:</b> Lance Parrish, Rich Hill, Ron Villone<br><b>Twins:</b> Bob Miller, Rich Hill, Terry Mulholland
+CLE - SDP	<b>Optimal:</b> Rich Hill, Ron Villone<br><b>Twins:</b> Bob Miller, Rich Hill
+CLE - SEA	<b>Optimal:</b> Anthony Swarzak, Lance Parrish, Ron Villone<br><b>Twins:</b> Anthony Swarzak, Pat Borders, Terry Mulholland
+CLE - SFG	<b>Optimal:</b> Dennis Cook<br><b>Twins:</b> Dan Schatzeder, Orlando Cabrera, Terry Mulholland
+CLE - STL	<b>Optimal:</b> Ron Villone<br><b>Twins:</b> Bob Miller, Matt Belisle, Pat Borders
+CLE - TBD	<b>Optimal:</b> Rich Hill<br><b>Twins:</b> Rich Hill
+CLE - TEX	<b>Optimal:</b> Bruce Chen, Dennis Cook<br><b>Twins:</b> Sandy Leon
+CLE - TOR	<b>Optimal:</b> Lance Parrish<br><b>Twins:</b> Gio Urshela, Pat Borders
+CLE - WSN	<b>Optimal:</b> Bruce Chen, Ron Villone<br><b>Twins:</b> Dan Schatzeder, Matt Belisle, Orlando Cabrera, Sandy Leon
+COL - DET	<b>Optimal:</b> Octavio Dotel<br><b>Twins:</b> Mark Redman, Todd Jones
+COL - FLA	<b>Optimal:</b> Ron Villone<br><b>Twins:</b> Mark Redman, Todd Jones
+COL - HOU	<b>Optimal:</b> LaTroy Hawkins, Octavio Dotel, Ron Villone<br><b>Twins:</b> LaTroy Hawkins, Pat Neshek, Todd Jones
+COL - KCR	<b>Optimal:</b> Octavio Dotel<br><b>Twins:</b> Dennys Reyes, Mark Redman
+COL - LAD	<b>Optimal:</b> Octavio Dotel<br><b>Twins:</b> Dennys Reyes
+COL - MIL	<b>Optimal:</b> Chase Anderson, LaTroy Hawkins, Ron Villone<br><b>Twins:</b> LaTroy Hawkins
+COL - MIN	<b>Optimal:</b> LaTroy Hawkins<br><b>Twins:</b> Alex Colome, Dennys Reyes, LaTroy Hawkins, Mark Redman, Matt Belisle, Pat Neshek, Taylor Motter, Todd Jones
+COL - NYM	<b>Optimal:</b> LaTroy Hawkins, Octavio Dotel<br><b>Twins:</b> LaTroy Hawkins
+COL - NYY	<b>Optimal:</b> LaTroy Hawkins, Octavio Dotel, Ron Villone<br><b>Twins:</b> LaTroy Hawkins
+COL - OAK	<b>Optimal:</b> Octavio Dotel<br><b>Twins:</b> Mark Redman, Pat Neshek
+COL - PHI	<b>Optimal:</b> Chase Anderson<br><b>Twins:</b> Pat Neshek, Todd Jones
+COL - PIT	<b>Optimal:</b> Octavio Dotel, Ron Villone<br><b>Twins:</b> Dennys Reyes, Mark Redman
+COL - SDP	<b>Optimal:</b> Ron Villone<br><b>Twins:</b> Dennys Reyes, Pat Neshek
+COL - SEA	<b>Optimal:</b> Ron Villone<br><b>Twins:</b> Alex Colome, Taylor Motter
+COL - SFG	<b>Optimal:</b> LaTroy Hawkins<br><b>Twins:</b> LaTroy Hawkins
+COL - STL	<b>Optimal:</b> Octavio Dotel, Ron Villone<br><b>Twins:</b> Dennys Reyes, Matt Belisle, Pat Neshek, Taylor Motter
+COL - TBD	<b>Optimal:</b> Chase Anderson<br><b>Twins:</b> Alex Colome, Taylor Motter
+COL - TEX	<b>Optimal:</b> Chase Anderson<br><b>Twins:</b> Dennys Reyes
+COL - TOR	<b>Optimal:</b> Chase Anderson, LaTroy Hawkins, Octavio Dotel<br><b>Twins:</b> LaTroy Hawkins
+COL - WSN	<b>Optimal:</b> Ron Villone<br><b>Twins:</b> Matt Belisle
+DET - FLA	<b>Optimal:</b> Edgar Renteria, Edwin Jackson, Fernando Rodney<br><b>Twins:</b> Fernando Rodney, Mark Redman, Todd Jones
+DET - HOU	<b>Optimal:</b> Octavio Dotel<br><b>Twins:</b> Dan Schatzeder, Gregg Olson, Todd Jones
+DET - KCR	<b>Optimal:</b> Matt Stairs, Octavio Dotel<br><b>Twins:</b> Dan Schatzeder, Gregg Olson, Mark Redman
+DET - LAD	<b>Optimal:</b> Edwin Jackson, Octavio Dotel<br><b>Twins:</b> Bill Krueger, Bob Miller, Gregg Olson
+DET - MIL	<b>Optimal:</b> Matt Stairs<br><b>Twins:</b> Bill Krueger
+DET - MIN	<b>Optimal:</b> Fernando Rodney<br><b>Twins:</b> Bill Krueger, Bob Miller, Dan Schatzeder, Fernando Rodney, Gio Urshela, Gregg Olson, Mark Redman, Ron Kline, Todd Jones
+DET - NYM	<b>Optimal:</b> Octavio Dotel<br><b>Twins:</b> Bob Miller, Dan Schatzeder
+DET - NYY	<b>Optimal:</b> Octavio Dotel<br><b>Twins:</b> Gio Urshela
+DET - OAK	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Matt Stairs, Octavio Dotel<br><b>Twins:</b> Bill Krueger, Fernando Rodney, Mark Redman
+DET - PHI	<b>Optimal:</b> Lance Parrish, Matt Stairs<br><b>Twins:</b> Dan Schatzeder, Todd Jones
+DET - PIT	<b>Optimal:</b> Lance Parrish, Matt Stairs, Octavio Dotel<br><b>Twins:</b> Bob Miller, Mark Redman, Ron Kline
+DET - SDP	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Matt Stairs<br><b>Twins:</b> Bill Krueger, Bob Miller, Fernando Rodney
+DET - SEA	<b>Optimal:</b> Fernando Rodney, Lance Parrish<br><b>Twins:</b> Bill Krueger, Fernando Rodney
+DET - SFG	<b>Optimal:</b> Edgar Renteria<br><b>Twins:</b> Dan Schatzeder, Ron Kline
+DET - STL	<b>Optimal:</b> Edgar Renteria, Edwin Jackson, Octavio Dotel<br><b>Twins:</b> Bob Miller, Ron Kline
+DET - TBD	<b>Optimal:</b> Edwin Jackson, Fernando Rodney<br><b>Twins:</b> Fernando Rodney
+DET - TEX	<b>Optimal:</b> Matt Stairs<br><b>Twins:</b> Ron Kline
+DET - TOR	<b>Optimal:</b> Edwin Jackson, Lance Parrish, Matt Stairs, Octavio Dotel<br><b>Twins:</b> Gio Urshela
+DET - WSN	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Matt Stairs<br><b>Twins:</b> Bill Krueger, Dan Schatzeder, Fernando Rodney
+FLA - HOU	<b>Optimal:</b> Ron Villone<br><b>Twins:</b> Todd Jones
+FLA - KCR	<b>Optimal:</b> Billy Hamilton<br><b>Twins:</b> Billy Hamilton, Mark Redman
+FLA - LAD	<b>Optimal:</b> Dennis Cook, Edwin Jackson<br><b>Twins:</b> Sergio Romo
+FLA - MIL	<b>Optimal:</b> Ron Villone<br><b>Twins:</b> Logan Morrison
+FLA - MIN	<b>Optimal:</b> Billy Hamilton, Fernando Rodney<br><b>Twins:</b> Billy Hamilton, Fernando Rodney, Logan Morrison, Luis Ayala, Mark Redman, Sandy Leon, Sergio Romo, Todd Jones
+FLA - NYM	<b>Optimal:</b> Billy Hamilton, Dennis Cook<br><b>Twins:</b> Billy Hamilton, Luis Ayala
+FLA - NYY	<b>Optimal:</b> Ron Villone<br><b>Twins:</b> Luis Ayala
+FLA - OAK	<b>Optimal:</b> Edwin Jackson, Fernando Rodney<br><b>Twins:</b> Fernando Rodney, Mark Redman, Sergio Romo
+FLA - PHI	<b>Optimal:</b> Dennis Cook<br><b>Twins:</b> Logan Morrison, Todd Jones
+FLA - PIT	<b>Optimal:</b> Ron Villone<br><b>Twins:</b> Mark Redman
+FLA - SDP	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Ron Villone<br><b>Twins:</b> Fernando Rodney
+FLA - SEA	<b>Optimal:</b> Fernando Rodney, Ron Villone<br><b>Twins:</b> Fernando Rodney, Logan Morrison, Sergio Romo
+FLA - SFG	<b>Optimal:</b> Dennis Cook, Edgar Renteria<br><b>Twins:</b> Sergio Romo
+FLA - STL	<b>Optimal:</b> Edgar Renteria, Edwin Jackson, Ron Villone<br><b>Twins:</b> (none)
+FLA - TBD	<b>Optimal:</b> Edwin Jackson, Fernando Rodney<br><b>Twins:</b> Fernando Rodney, Logan Morrison, Sergio Romo
+FLA - TEX	<b>Optimal:</b> Dennis Cook<br><b>Twins:</b> Sandy Leon
+FLA - TOR	<b>Optimal:</b> Edwin Jackson<br><b>Twins:</b> Sergio Romo
+FLA - WSN	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Ron Villone<br><b>Twins:</b> Fernando Rodney, Luis Ayala, Sandy Leon
+HOU - KCR	<b>Optimal:</b> Bruce Chen, Octavio Dotel<br><b>Twins:</b> Dan Schatzeder, Gregg Olson, Jake Odorizzi, Pat Borders
+HOU - LAD	<b>Optimal:</b> Jose Cruz, Octavio Dotel<br><b>Twins:</b> Gregg Olson
+HOU - MIL	<b>Optimal:</b> LaTroy Hawkins, Ron Villone<br><b>Twins:</b> Carlos Gomez, LaTroy Hawkins
+HOU - MIN	<b>Optimal:</b> LaTroy Hawkins<br><b>Twins:</b> Carlos Gomez, Dan Schatzeder, Gregg Olson, J. A. Happ, Jake Odorizzi, LaTroy Hawkins, Orlando Merced, Pat Borders, Pat Neshek, Todd Jones
+HOU - NYM	<b>Optimal:</b> Bruce Chen, LaTroy Hawkins, Octavio Dotel<br><b>Twins:</b> Carlos Gomez, Dan Schatzeder, LaTroy Hawkins
+HOU - NYY	<b>Optimal:</b> LaTroy Hawkins, Octavio Dotel, Ron Villone<br><b>Twins:</b> J. A. Happ, LaTroy Hawkins
+HOU - OAK	<b>Optimal:</b> Octavio Dotel<br><b>Twins:</b> Pat Neshek
+HOU - PHI	<b>Optimal:</b> Bruce Chen<br><b>Twins:</b> Dan Schatzeder, J. A. Happ, Pat Neshek, Todd Jones
+HOU - PIT	<b>Optimal:</b> Octavio Dotel, Ron Villone<br><b>Twins:</b> J. A. Happ, Orlando Merced
+HOU - SDP	<b>Optimal:</b> Jose Cruz, Ron Villone<br><b>Twins:</b> Pat Neshek
+HOU - SEA	<b>Optimal:</b> Jose Cruz, Ron Villone<br><b>Twins:</b> J. A. Happ, Pat Borders
+HOU - SFG	<b>Optimal:</b> Jose Cruz, LaTroy Hawkins<br><b>Twins:</b> Dan Schatzeder, LaTroy Hawkins
+HOU - STL	<b>Optimal:</b> Octavio Dotel, Ron Villone<br><b>Twins:</b> J. A. Happ, Pat Borders, Pat Neshek
+HOU - TBD	<b>Optimal:</b> Jose Cruz<br><b>Twins:</b> Carlos Gomez, Jake Odorizzi
+HOU - TEX	<b>Optimal:</b> Bruce Chen<br><b>Twins:</b> Carlos Gomez
+HOU - TOR	<b>Optimal:</b> Jose Cruz, LaTroy Hawkins, Octavio Dotel<br><b>Twins:</b> J. A. Happ, LaTroy Hawkins, Orlando Merced, Pat Borders
+HOU - WSN	<b>Optimal:</b> Bruce Chen, Ron Villone<br><b>Twins:</b> Dan Schatzeder, Orlando Merced
+KCR - LAD	<b>Optimal:</b> Ken Brett, Octavio Dotel<br><b>Twins:</b> Dennys Reyes, Gregg Olson, Ken Brett
+KCR - MIL	<b>Optimal:</b> Anthony Swarzak, Ken Brett, Matt Stairs<br><b>Twins:</b> Anthony Swarzak, Ken Brett
+KCR - MIN	<b>Optimal:</b> Anthony Swarzak, Billy Hamilton, Ken Brett<br><b>Twins:</b> Anthony Swarzak, Billy Hamilton, Dan Schatzeder, Dennys Reyes, Gregg Olson, Jake Odorizzi, Ken Brett, Mark Redman, Pat Borders
+KCR - NYM	<b>Optimal:</b> Anthony Swarzak, Billy Hamilton, Bruce Chen, Octavio Dotel<br><b>Twins:</b> Anthony Swarzak, Billy Hamilton, Dan Schatzeder
+KCR - NYY	<b>Optimal:</b> Anthony Swarzak, Ken Brett, Octavio Dotel<br><b>Twins:</b> Anthony Swarzak, Ken Brett
+KCR - OAK	<b>Optimal:</b> Jose Guillen, Matt Stairs, Octavio Dotel<br><b>Twins:</b> Mark Redman
+KCR - PHI	<b>Optimal:</b> Bruce Chen, Ken Brett, Matt Stairs<br><b>Twins:</b> Dan Schatzeder, Ken Brett
+KCR - PIT	<b>Optimal:</b> Jose Guillen, Ken Brett, Matt Stairs, Octavio Dotel<br><b>Twins:</b> Dennys Reyes, Ken Brett, Mark Redman
+KCR - SDP	<b>Optimal:</b> Matt Stairs<br><b>Twins:</b> Dennys Reyes
+KCR - SEA	<b>Optimal:</b> Anthony Swarzak, Jose Guillen<br><b>Twins:</b> Anthony Swarzak, Pat Borders
+KCR - SFG	<b>Optimal:</b> Jose Guillen<br><b>Twins:</b> Dan Schatzeder
+KCR - STL	<b>Optimal:</b> Octavio Dotel<br><b>Twins:</b> Dennys Reyes, Pat Borders
+KCR - TBD	<b>Optimal:</b> Jose Guillen<br><b>Twins:</b> Jake Odorizzi
+KCR - TEX	<b>Optimal:</b> Bruce Chen, Matt Stairs<br><b>Twins:</b> Dennys Reyes
+KCR - TOR	<b>Optimal:</b> Matt Stairs, Octavio Dotel<br><b>Twins:</b> Pat Borders
+KCR - WSN	<b>Optimal:</b> Bruce Chen, Jose Guillen, Matt Stairs<br><b>Twins:</b> Dan Schatzeder
+LAD - MIL	<b>Optimal:</b> Ken Brett<br><b>Twins:</b> Bill Krueger, Ken Brett
+LAD - MIN	<b>Optimal:</b> Ken Brett, Mike Morgan, Rich Hill<br><b>Twins:</b> Bill Krueger, Bob Miller, Dennys Reyes, Gregg Olson, Ken Brett, Mike Morgan, Rich Hill, Sergio Romo, Terry Mulholland
+LAD - NYM	<b>Optimal:</b> Dennis Cook, Octavio Dotel, Rich Hill<br><b>Twins:</b> Bob Miller, Rich Hill
+LAD - NYY	<b>Optimal:</b> Ken Brett, Mike Morgan, Octavio Dotel, Rich Hill<br><b>Twins:</b> Ken Brett, Mike Morgan, Rich Hill, Terry Mulholland
+LAD - OAK	<b>Optimal:</b> Edwin Jackson, Mike Morgan, Octavio Dotel, Rich Hill<br><b>Twins:</b> Bill Krueger, Mike Morgan, Rich Hill, Sergio Romo
+LAD - PHI	<b>Optimal:</b> Dennis Cook, Ken Brett<br><b>Twins:</b> Ken Brett, Terry Mulholland
+LAD - PIT	<b>Optimal:</b> Ken Brett, Octavio Dotel, Rich Hill<br><b>Twins:</b> Bob Miller, Dennys Reyes, Ken Brett, Rich Hill, Terry Mulholland
+LAD - SDP	<b>Optimal:</b> Edwin Jackson, Jose Cruz, Rich Hill<br><b>Twins:</b> Bill Krueger, Bob Miller, Dennys Reyes, Rich Hill
+LAD - SEA	<b>Optimal:</b> Jose Cruz, Mike Morgan<br><b>Twins:</b> Bill Krueger, Mike Morgan, Sergio Romo, Terry Mulholland
+LAD - SFG	<b>Optimal:</b> Dennis Cook, Jose Cruz<br><b>Twins:</b> Sergio Romo, Terry Mulholland
+LAD - STL	<b>Optimal:</b> Edwin Jackson, Mike Morgan, Octavio Dotel<br><b>Twins:</b> Bob Miller, Dennys Reyes, Mike Morgan
+LAD - TBD	<b>Optimal:</b> Edwin Jackson, Jose Cruz, Rich Hill<br><b>Twins:</b> Rich Hill, Sergio Romo
+LAD - TEX	<b>Optimal:</b> Dennis Cook, Mike Morgan<br><b>Twins:</b> Dennys Reyes, Mike Morgan
+LAD - TOR	<b>Optimal:</b> Edwin Jackson, Jose Cruz, Mike Morgan, Octavio Dotel<br><b>Twins:</b> Mike Morgan, Sergio Romo
+LAD - WSN	<b>Optimal:</b> Edwin Jackson<br><b>Twins:</b> Bill Krueger
+MIL - MIN	<b>Optimal:</b> Anthony Swarzak, Ken Brett, LaTroy Hawkins<br><b>Twins:</b> Anthony Swarzak, Bill Krueger, Carlos Gomez, Jay Jackson, Ken Brett, Kyle Lohse, LaTroy Hawkins, Logan Morrison
+MIL - NYM	<b>Optimal:</b> Anthony Swarzak, LaTroy Hawkins<br><b>Twins:</b> Anthony Swarzak, Carlos Gomez, LaTroy Hawkins
+MIL - NYY	<b>Optimal:</b> Anthony Swarzak, Ken Brett, LaTroy Hawkins, Ron Villone<br><b>Twins:</b> Anthony Swarzak, Ken Brett, LaTroy Hawkins
+MIL - OAK	<b>Optimal:</b> Matt Stairs<br><b>Twins:</b> Bill Krueger
+MIL - PHI	<b>Optimal:</b> Chase Anderson, Ken Brett, Matt Stairs<br><b>Twins:</b> Ken Brett, Kyle Lohse, Logan Morrison
+MIL - PIT	<b>Optimal:</b> Ken Brett, Matt Stairs, Ron Villone<br><b>Twins:</b> Ken Brett
+MIL - SDP	<b>Optimal:</b> Matt Stairs, Ron Villone<br><b>Twins:</b> Bill Krueger, Jay Jackson
+MIL - SEA	<b>Optimal:</b> Anthony Swarzak, Ron Villone<br><b>Twins:</b> Anthony Swarzak, Bill Krueger, Logan Morrison
+MIL - SFG	<b>Optimal:</b> LaTroy Hawkins<br><b>Twins:</b> Jay Jackson, LaTroy Hawkins
+MIL - STL	<b>Optimal:</b> Ron Villone<br><b>Twins:</b> Kyle Lohse
+MIL - TBD	<b>Optimal:</b> Chase Anderson<br><b>Twins:</b> Carlos Gomez, Logan Morrison
+MIL - TEX	<b>Optimal:</b> Chase Anderson, Matt Stairs<br><b>Twins:</b> Carlos Gomez, Kyle Lohse
+MIL - TOR	<b>Optimal:</b> Chase Anderson, LaTroy Hawkins, Matt Stairs<br><b>Twins:</b> Jay Jackson, LaTroy Hawkins
+MIL - WSN	<b>Optimal:</b> Matt Stairs, Ron Villone<br><b>Twins:</b> Bill Krueger
+MIN - NYM	<b>Optimal:</b> Anthony Swarzak, Billy Hamilton, LaTroy Hawkins, Rich Hill<br><b>Twins:</b> Anthony Swarzak, Billy Hamilton, Bob Miller, Carlos Gomez, Dan Schatzeder, LaTroy Hawkins, Luis Ayala, Rich Hill
+MIN - NYY	<b>Optimal:</b> Anthony Swarzak, Ken Brett, LaTroy Hawkins, Mike Morgan, Rich Hill<br><b>Twins:</b> Anthony Swarzak, Gio Urshela, J. A. Happ, Ken Brett, LaTroy Hawkins, Luis Ayala, Mike Morgan, Rich Hill, Terry Mulholland
+MIN - OAK	<b>Optimal:</b> Fernando Rodney, Mike Morgan, Rich Hill<br><b>Twins:</b> Bill Krueger, Fernando Rodney, Mark Redman, Mike Morgan, Orlando Cabrera, Pat Neshek, Rich Hill, Sergio Romo
+MIN - PHI	<b>Optimal:</b> Ken Brett<br><b>Twins:</b> Dan Schatzeder, J. A. Happ, Ken Brett, Kyle Lohse, Logan Morrison, Pat Neshek, Roy Sievers, Terry Mulholland, Todd Jones
+MIN - PIT	<b>Optimal:</b> Ken Brett, Rich Hill<br><b>Twins:</b> Bob Miller, Dennys Reyes, J. A. Happ, Ken Brett, Mark Redman, Orlando Merced, Rich Hill, Ron Kline, Terry Mulholland
+MIN - SDP	<b>Optimal:</b> Fernando Rodney, Rich Hill<br><b>Twins:</b> Bill Krueger, Bob Miller, Dennys Reyes, Fernando Rodney, Jay Jackson, Pat Neshek, Rich Hill
+MIN - SEA	<b>Optimal:</b> Anthony Swarzak, Fernando Rodney, Mike Morgan<br><b>Twins:</b> Alex Colome, Anthony Swarzak, Bill Krueger, Fernando Rodney, J. A. Happ, Logan Morrison, Mike Morgan, Pat Borders, Sergio Romo, Taylor Motter, Terry Mulholland
+MIN - SFG	<b>Optimal:</b> LaTroy Hawkins<br><b>Twins:</b> Dan Schatzeder, Jay Jackson, LaTroy Hawkins, Orlando Cabrera, Ron Kline, Sergio Romo, Terry Mulholland
+MIN - STL	<b>Optimal:</b> Mike Morgan<br><b>Twins:</b> Bob Miller, Dennys Reyes, J. A. Happ, Kyle Lohse, Matt Belisle, Mike Morgan, Pat Borders, Pat Neshek, Ron Kline, Taylor Motter
+MIN - TBD	<b>Optimal:</b> Fernando Rodney, Rich Hill<br><b>Twins:</b> Alex Colome, Carlos Gomez, Fernando Rodney, Jake Odorizzi, Logan Morrison, Rich Hill, Sergio Romo, Taylor Motter
+MIN - TEX	<b>Optimal:</b> Mike Morgan<br><b>Twins:</b> Carlos Gomez, Dennys Reyes, Kyle Lohse, Mike Morgan, Ron Kline, Roy Sievers, Sandy Leon
+MIN - TOR	<b>Optimal:</b> LaTroy Hawkins, Mike Morgan<br><b>Twins:</b> Gio Urshela, J. A. Happ, Jay Jackson, LaTroy Hawkins, Mike Morgan, Orlando Merced, Pat Borders, Sergio Romo
+MIN - WSN	<b>Optimal:</b> Fernando Rodney<br><b>Twins:</b> Bill Krueger, Dan Schatzeder, Fernando Rodney, Luis Ayala, Matt Belisle, Orlando Cabrera, Orlando Merced, Sandy Leon
+NYM - NYY	<b>Optimal:</b> Anthony Swarzak, LaTroy Hawkins, Octavio Dotel, Rich Hill<br><b>Twins:</b> Anthony Swarzak, LaTroy Hawkins, Luis Ayala, Rich Hill
+NYM - OAK	<b>Optimal:</b> Octavio Dotel, Rich Hill<br><b>Twins:</b> Rich Hill
+NYM - PHI	<b>Optimal:</b> Bruce Chen, Dennis Cook<br><b>Twins:</b> Dan Schatzeder
+NYM - PIT	<b>Optimal:</b> Octavio Dotel, Rich Hill<br><b>Twins:</b> Bob Miller, Rich Hill
+NYM - SDP	<b>Optimal:</b> Rich Hill<br><b>Twins:</b> Bob Miller, Rich Hill
+NYM - SEA	<b>Optimal:</b> Anthony Swarzak<br><b>Twins:</b> Anthony Swarzak
+NYM - SFG	<b>Optimal:</b> Dennis Cook, LaTroy Hawkins<br><b>Twins:</b> Dan Schatzeder, LaTroy Hawkins
+NYM - STL	<b>Optimal:</b> Octavio Dotel<br><b>Twins:</b> Bob Miller
+NYM - TBD	<b>Optimal:</b> Rich Hill<br><b>Twins:</b> Carlos Gomez, Rich Hill
+NYM - TEX	<b>Optimal:</b> Bruce Chen, Dennis Cook<br><b>Twins:</b> Carlos Gomez
+NYM - TOR	<b>Optimal:</b> LaTroy Hawkins, Octavio Dotel<br><b>Twins:</b> LaTroy Hawkins
+NYM - WSN	<b>Optimal:</b> Bruce Chen<br><b>Twins:</b> Dan Schatzeder, Luis Ayala
+NYY - OAK	<b>Optimal:</b> Mike Morgan, Octavio Dotel, Rich Hill<br><b>Twins:</b> Mike Morgan, Rich Hill
+NYY - PHI	<b>Optimal:</b> Ken Brett, Lew Burdette<br><b>Twins:</b> J. A. Happ, Ken Brett, Terry Mulholland
+NYY - PIT	<b>Optimal:</b> Ken Brett, Octavio Dotel, Rich Hill, Ron Villone<br><b>Twins:</b> J. A. Happ, Ken Brett, Rich Hill, Terry Mulholland
+NYY - SDP	<b>Optimal:</b> Rich Hill, Ron Villone<br><b>Twins:</b> Rich Hill
+NYY - SEA	<b>Optimal:</b> Anthony Swarzak, Mike Morgan, Ron Villone<br><b>Twins:</b> Anthony Swarzak, J. A. Happ, Mike Morgan, Terry Mulholland
+NYY - SFG	<b>Optimal:</b> LaTroy Hawkins<br><b>Twins:</b> LaTroy Hawkins, Terry Mulholland
+NYY - STL	<b>Optimal:</b> Lew Burdette, Mike Morgan, Octavio Dotel, Ron Villone<br><b>Twins:</b> J. A. Happ, Mike Morgan
+NYY - TBD	<b>Optimal:</b> Rich Hill<br><b>Twins:</b> Rich Hill
+NYY - TEX	<b>Optimal:</b> Mike Morgan<br><b>Twins:</b> Mike Morgan
+NYY - TOR	<b>Optimal:</b> LaTroy Hawkins, Mike Morgan, Octavio Dotel<br><b>Twins:</b> Gio Urshela, J. A. Happ, LaTroy Hawkins, Mike Morgan
+NYY - WSN	<b>Optimal:</b> Ron Villone<br><b>Twins:</b> Luis Ayala
+OAK - PHI	<b>Optimal:</b> Matt Stairs<br><b>Twins:</b> Pat Neshek
+OAK - PIT	<b>Optimal:</b> Jose Guillen, Matt Stairs, Octavio Dotel, Rich Hill<br><b>Twins:</b> Mark Redman, Rich Hill
+OAK - SDP	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Matt Stairs, Rich Hill<br><b>Twins:</b> Bill Krueger, Fernando Rodney, Pat Neshek, Rich Hill
+OAK - SEA	<b>Optimal:</b> Fernando Rodney, Jose Guillen, Mike Morgan<br><b>Twins:</b> Bill Krueger, Fernando Rodney, Mike Morgan, Sergio Romo
+OAK - SFG	<b>Optimal:</b> Jose Guillen<br><b>Twins:</b> Orlando Cabrera, Sergio Romo
+OAK - STL	<b>Optimal:</b> Edwin Jackson, Mike Morgan, Octavio Dotel<br><b>Twins:</b> Mike Morgan, Pat Neshek
+OAK - TBD	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Jose Guillen, Rich Hill<br><b>Twins:</b> Fernando Rodney, Rich Hill, Sergio Romo
+OAK - TEX	<b>Optimal:</b> Matt Stairs, Mike Morgan<br><b>Twins:</b> Mike Morgan
+OAK - TOR	<b>Optimal:</b> Edwin Jackson, Matt Stairs, Mike Morgan, Octavio Dotel<br><b>Twins:</b> Mike Morgan, Sergio Romo
+OAK - WSN	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Jose Guillen, Matt Stairs<br><b>Twins:</b> Bill Krueger, Fernando Rodney, Orlando Cabrera
+PHI - PIT	<b>Optimal:</b> Ken Brett, Lance Parrish, Matt Stairs<br><b>Twins:</b> J. A. Happ, Ken Brett, Terry Mulholland
+PHI - SDP	<b>Optimal:</b> Matt Stairs<br><b>Twins:</b> Pat Neshek
+PHI - SEA	<b>Optimal:</b> Lance Parrish<br><b>Twins:</b> J. A. Happ, Logan Morrison, Terry Mulholland
+PHI - SFG	<b>Optimal:</b> Dennis Cook<br><b>Twins:</b> Dan Schatzeder, Terry Mulholland
+PHI - STL	<b>Optimal:</b> Lew Burdette<br><b>Twins:</b> J. A. Happ, Kyle Lohse, Pat Neshek
+PHI - TBD	<b>Optimal:</b> Chase Anderson<br><b>Twins:</b> Logan Morrison
+PHI - TEX	<b>Optimal:</b> Bruce Chen, Chase Anderson, Dennis Cook, Matt Stairs<br><b>Twins:</b> Kyle Lohse, Roy Sievers
+PHI - TOR	<b>Optimal:</b> Chase Anderson, Lance Parrish, Matt Stairs<br><b>Twins:</b> J. A. Happ
+PHI - WSN	<b>Optimal:</b> Bruce Chen, Matt Stairs<br><b>Twins:</b> Dan Schatzeder
+PIT - SDP	<b>Optimal:</b> Matt Stairs, Rich Hill, Ron Villone<br><b>Twins:</b> Bob Miller, Dennys Reyes, Rich Hill
+PIT - SEA	<b>Optimal:</b> Jose Guillen, Lance Parrish, Ron Villone<br><b>Twins:</b> J. A. Happ, Terry Mulholland
+PIT - SFG	<b>Optimal:</b> Jose Guillen<br><b>Twins:</b> Ron Kline, Terry Mulholland
+PIT - STL	<b>Optimal:</b> Octavio Dotel, Ron Villone<br><b>Twins:</b> Bob Miller, Dennys Reyes, J. A. Happ, Ron Kline
+PIT - TBD	<b>Optimal:</b> Jose Guillen, Rich Hill<br><b>Twins:</b> Rich Hill
+PIT - TEX	<b>Optimal:</b> Matt Stairs<br><b>Twins:</b> Dennys Reyes, Ron Kline
+PIT - TOR	<b>Optimal:</b> Lance Parrish, Matt Stairs, Octavio Dotel<br><b>Twins:</b> J. A. Happ, Orlando Merced
+PIT - WSN	<b>Optimal:</b> Jose Guillen, Matt Stairs, Ron Villone<br><b>Twins:</b> Orlando Merced
+SDP - SEA	<b>Optimal:</b> Fernando Rodney, Jose Cruz, Ron Villone<br><b>Twins:</b> Bill Krueger, Fernando Rodney
+SDP - SFG	<b>Optimal:</b> Jose Cruz<br><b>Twins:</b> Jay Jackson
+SDP - STL	<b>Optimal:</b> Edwin Jackson, Ron Villone<br><b>Twins:</b> Bob Miller, Dennys Reyes, Pat Neshek
+SDP - TBD	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Jose Cruz, Rich Hill<br><b>Twins:</b> Fernando Rodney, Rich Hill
+SDP - TEX	<b>Optimal:</b> Matt Stairs<br><b>Twins:</b> Dennys Reyes
+SDP - TOR	<b>Optimal:</b> Edwin Jackson, Jose Cruz, Matt Stairs<br><b>Twins:</b> Jay Jackson
+SDP - WSN	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Matt Stairs, Ron Villone<br><b>Twins:</b> Bill Krueger, Fernando Rodney
+SEA - SFG	<b>Optimal:</b> Jose Cruz, Jose Guillen<br><b>Twins:</b> Sergio Romo, Terry Mulholland
+SEA - STL	<b>Optimal:</b> Mike Morgan, Ron Villone<br><b>Twins:</b> J. A. Happ, Mike Morgan, Pat Borders, Taylor Motter
+SEA - TBD	<b>Optimal:</b> Fernando Rodney, Jose Cruz, Jose Guillen<br><b>Twins:</b> Alex Colome, Fernando Rodney, Logan Morrison, Sergio Romo, Taylor Motter
+SEA - TEX	<b>Optimal:</b> Mike Morgan<br><b>Twins:</b> Mike Morgan
+SEA - TOR	<b>Optimal:</b> Jose Cruz, Lance Parrish, Mike Morgan<br><b>Twins:</b> J. A. Happ, Mike Morgan, Pat Borders, Sergio Romo
+SEA - WSN	<b>Optimal:</b> Fernando Rodney, Jose Guillen, Ron Villone<br><b>Twins:</b> Bill Krueger, Fernando Rodney
+SFG - STL	<b>Optimal:</b> Edgar Renteria<br><b>Twins:</b> Ron Kline
+SFG - TBD	<b>Optimal:</b> Jose Cruz, Jose Guillen<br><b>Twins:</b> Sergio Romo
+SFG - TEX	<b>Optimal:</b> Dennis Cook<br><b>Twins:</b> Ron Kline
+SFG - TOR	<b>Optimal:</b> Jose Cruz, LaTroy Hawkins<br><b>Twins:</b> Jay Jackson, LaTroy Hawkins, Sergio Romo
+SFG - WSN	<b>Optimal:</b> Jose Guillen<br><b>Twins:</b> Dan Schatzeder, Orlando Cabrera
+STL - TBD	<b>Optimal:</b> Edwin Jackson<br><b>Twins:</b> Taylor Motter
+STL - TEX	<b>Optimal:</b> Mike Morgan<br><b>Twins:</b> Dennys Reyes, Kyle Lohse, Mike Morgan, Ron Kline
+STL - TOR	<b>Optimal:</b> Edwin Jackson, Mike Morgan, Octavio Dotel<br><b>Twins:</b> J. A. Happ, Mike Morgan, Pat Borders
+STL - WSN	<b>Optimal:</b> Edwin Jackson, Ron Villone<br><b>Twins:</b> Matt Belisle
+TBD - TEX	<b>Optimal:</b> Chase Anderson<br><b>Twins:</b> Carlos Gomez
+TBD - TOR	<b>Optimal:</b> Chase Anderson, Edwin Jackson, Jose Cruz<br><b>Twins:</b> Sergio Romo
+TBD - WSN	<b>Optimal:</b> Edwin Jackson, Fernando Rodney, Jose Guillen<br><b>Twins:</b> Fernando Rodney
+TEX - TOR	<b>Optimal:</b> Chase Anderson, Matt Stairs, Mike Morgan<br><b>Twins:</b> Mike Morgan
+TEX - WSN	<b>Optimal:</b> Bruce Chen, Matt Stairs<br><b>Twins:</b> Sandy Leon
+TOR - WSN	<b>Optimal:</b> Edwin Jackson, Matt Stairs<br><b>Twins:</b> Orlando Merced

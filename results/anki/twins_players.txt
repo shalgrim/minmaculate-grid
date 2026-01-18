@@ -1,0 +1,39 @@
+#separator:tab
+#html:true
+#tags:minmaculate twins player
+#deck:Minmaculate Grid::Twins Players
+Front	Back
+Alex Colome	MIN, CHW, COL, SEA, TBD
+Anthony Swarzak	MIN, ARI, ATL, CHW, CLE, KCR, MIL, NYM, NYY, SEA
+Bill Krueger	MIN, DET, LAD, MIL, OAK, SDP, SEA, WSN
+Billy Hamilton	MIN, ATL, CHC, CHW, CIN, FLA, KCR, NYM
+Bob Miller	MIN, CHC, CHW, CLE, DET, LAD, NYM, PIT, SDP, STL
+Carlos Gomez	MIN, HOU, MIL, NYM, TBD, TEX
+Dan Schatzeder	MIN, CLE, DET, HOU, KCR, NYM, PHI, SFG, WSN
+Dennys Reyes	MIN, ARI, BOS, CIN, COL, KCR, LAD, PIT, SDP, STL, TEX
+Fernando Rodney	MIN, ANA, ARI, CHC, DET, FLA, OAK, SDP, SEA, TBD, WSN
+Gio Urshela	MIN, ANA, ATL, CLE, DET, NYY, TOR
+Gregg Olson	MIN, ARI, ATL, BAL, CLE, DET, HOU, KCR, LAD
+J. A. Happ	MIN, HOU, NYY, PHI, PIT, SEA, STL, TOR
+Jake Odorizzi	MIN, ATL, HOU, KCR, TBD
+Jay Jackson	MIN, ATL, MIL, SDP, SFG, TOR
+Ken Brett	MIN, ANA, BOS, CHW, KCR, LAD, MIL, NYY, PHI, PIT
+Kyle Lohse	MIN, CIN, MIL, PHI, STL, TEX
+LaTroy Hawkins	MIN, ANA, BAL, CHC, COL, HOU, MIL, NYM, NYY, SFG, TOR
+Logan Morrison	MIN, FLA, MIL, PHI, SEA, TBD
+Luis Ayala	MIN, ATL, BAL, FLA, NYM, NYY, WSN
+Mark Redman	MIN, ATL, COL, DET, FLA, KCR, OAK, PIT
+Matt Belisle	MIN, CIN, CLE, COL, STL, WSN
+Mike Morgan	MIN, ARI, BAL, CHC, CIN, LAD, NYY, OAK, SEA, STL, TEX, TOR
+Orlando Cabrera	MIN, ANA, BOS, CHW, CIN, CLE, OAK, SFG, WSN
+Orlando Merced	MIN, BOS, CHC, HOU, PIT, TOR, WSN
+Pat Borders	MIN, ANA, CHW, CLE, HOU, KCR, SEA, STL, TOR
+Pat Neshek	MIN, COL, HOU, OAK, PHI, SDP, STL
+Rich Hill	MIN, ANA, BAL, BOS, CHC, CLE, LAD, NYM, NYY, OAK, PIT, SDP, TBD
+Ron Kline	MIN, ANA, ATL, BOS, DET, PIT, SFG, STL, TEX
+Roy Sievers	MIN, BAL, CHW, PHI, TEX
+Sandy Leon	MIN, BOS, CLE, FLA, TEX, WSN
+Sergio Romo	MIN, FLA, LAD, OAK, SEA, SFG, TBD, TOR
+Taylor Motter	MIN, BOS, CIN, COL, SEA, STL, TBD
+Terry Mulholland	MIN, ARI, ATL, CHC, CLE, LAD, NYY, PHI, PIT, SEA, SFG
+Todd Jones	MIN, BOS, CIN, COL, DET, FLA, HOU, PHI
